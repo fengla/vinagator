@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed06ce40-b0f8-467f-add5-3d8caccd5e13" name="Default" comment="1.jsp:include公用footer(待测试)" />
+    <list default="true" id="ed06ce40-b0f8-467f-add5-3d8caccd5e13" name="Default" comment="1.jsp:include公用footer(待测试)">
+      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsDTO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewsDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/NewsDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -153,6 +157,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="BannerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="NewsService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -176,19 +190,6 @@
               <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/NewsConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-              <folding>
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -293,7 +294,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/BannerRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/BannerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/BannerConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/BannerDTO.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/summernote.css" />
@@ -311,6 +311,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java" />
       </list>
     </option>
   </component>
@@ -867,7 +868,7 @@
       <workItem from="1527081504816" duration="32000" />
       <workItem from="1529570775466" duration="45007000" />
       <workItem from="1530346226950" duration="5734000" />
-      <workItem from="1530515619032" duration="7243000" />
+      <workItem from="1530515619032" duration="7900000" />
     </task>
     <task id="LOCAL-00001" summary="发布活动">
       <created>1523093040128</created>
@@ -901,7 +902,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122972000" />
+    <option name="totallyTimeSpent" value="123629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
@@ -923,10 +924,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326713" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171459" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171459" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -979,6 +980,32 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.jsp" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1253,16 +1280,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/summernote.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="993">
@@ -1321,76 +1338,6 @@
           <folding>
             <element signature="e#347#348#0" expanded="true" />
             <element signature="e#387#388#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.6.RELEASE/spring-data-commons-1.13.6.RELEASE.jar!/org/springframework/data/domain/Sort.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="123" column="57" lean-forward="false" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
-          <folding>
-            <marker date="1501827220000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1501827220000" expanded="false" signature="155:349" ph="..." />
-            <marker date="1501827220000" expanded="true" signature="627:638" ph=" { " />
-            <marker date="1501827220000" expanded="true" signature="666:672" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="715:944" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="983:994" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="1030:1036" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="1102:1208" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="1277:1763" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="1796:2180" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="2233:2524" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="2568:2579" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="2609:2615" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="2655:2899" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="2927:3041" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="3071:3082" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="3147:3153" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="3166:3221" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="3277:7521" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="3668:3750" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="3852:3927" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="3966:3981" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4020:4030" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="4149:4610" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="4656:4671" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4693:4703" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="4740:4755" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4776:4786" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="4824:4839" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4875:4885" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="4924:4939" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4976:4986" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="5025:5040" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="5063:5073" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="5132:5240" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="5298:5406" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="5464:5479" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="5523:5533" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="5574:5676" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="5741:5849" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="5889:5904" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="5952:5962" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="6001:6016" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="6063:6073" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="6114:6129" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="6172:6182" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="6234:6249" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="6274:6284" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="6316:6637" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="6681:7109" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7144:7515" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7559:7667" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7650:7661" ph="{}" />
-            <marker date="1501827220000" expanded="true" signature="7702:8572" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7760:7771" ph="{}" />
-            <marker date="1501827220000" expanded="false" signature="7809:7824" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="7848:7858" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="7897:7912" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="7937:7947" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="8011:8328" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="8398:8566" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1496,6 +1443,84 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.6.RELEASE/spring-data-commons-1.13.6.RELEASE.jar!/org/springframework/data/domain/Sort.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="123" column="57" lean-forward="false" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
+          <folding>
+            <marker date="1501827220000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1501827220000" expanded="false" signature="155:349" ph="..." />
+            <marker date="1501827220000" expanded="true" signature="627:638" ph=" { " />
+            <marker date="1501827220000" expanded="true" signature="666:672" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="715:944" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="983:994" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="1030:1036" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="1102:1208" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="1277:1763" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="1796:2180" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="2233:2524" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="2568:2579" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="2609:2615" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="2655:2899" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="2927:3041" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="3071:3082" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="3147:3153" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="3166:3221" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="3277:7521" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="3668:3750" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="3852:3927" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="3966:3981" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="4020:4030" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="4149:4610" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="4656:4671" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="4693:4703" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="4740:4755" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="4776:4786" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="4824:4839" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="4875:4885" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="4924:4939" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="4976:4986" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="5025:5040" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="5063:5073" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="5132:5240" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="5298:5406" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="5464:5479" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="5523:5533" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="5574:5676" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="5741:5849" ph="{...}" />
+            <marker date="1501827220000" expanded="false" signature="5889:5904" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="5952:5962" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="6001:6016" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="6063:6073" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="6114:6129" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="6172:6182" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="6234:6249" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="6274:6284" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="6316:6637" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="6681:7109" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="7144:7515" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="7559:7667" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="7650:7661" ph="{}" />
+            <marker date="1501827220000" expanded="true" signature="7702:8572" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="7760:7771" ph="{}" />
+            <marker date="1501827220000" expanded="false" signature="7809:7824" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="7848:7858" ph=" }" />
+            <marker date="1501827220000" expanded="false" signature="7897:7912" ph=" { " />
+            <marker date="1501827220000" expanded="false" signature="7937:7947" ph=" }" />
+            <marker date="1501827220000" expanded="true" signature="8011:8328" ph="{...}" />
+            <marker date="1501827220000" expanded="true" signature="8398:8566" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

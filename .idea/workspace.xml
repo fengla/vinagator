@@ -2,9 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed06ce40-b0f8-467f-add5-3d8caccd5e13" name="Default" comment="1.jsp:include公用footer(待测试)">
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/config/ActivityConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/config/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/config/AppConfig.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/config/UserActivityConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AdminController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/data/ActivityOutline.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/data/Student.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/dto/ActivityDTO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/ActivityRepository.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserActivityRepository.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/ActivityService.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/UserActivityService.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/config/ActivityConfig.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/config/AppConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/config/AppConfig.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/config/UserActivityConfig.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/AdminController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/AppController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/AppController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/MainController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/NewsController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/NewsController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/UserController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/data/ActivityOutline.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/data/Student.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/dto/ActivityDTO.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/ActivityRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/AppRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/repository/AppRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/NewsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/repository/NewsRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/UserActivityRepository.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/ActivityService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/AppService.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/service/AppService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/NewsService.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/service/NewsService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/UserActivityService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,31 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AppController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="75" column="15" lean-forward="false" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+            <state relative-caret-position="1410">
+              <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -50,13 +66,31 @@
       <file leaf-file-name="AppService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="630">
+              <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1663#1664#0" expanded="true" />
-                <element signature="e#1715#1716#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,104 +98,18 @@
       <file leaf-file-name="NewsDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/NewsDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sort.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.6.RELEASE/spring-data-commons-1.13.6.RELEASE.jar!/org/springframework/data/domain/Sort.class">
+      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="123" column="57" lean-forward="false" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
-              <folding>
-                <marker date="1501827220000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1501827220000" expanded="false" signature="155:349" ph="..." />
-                <marker date="1501827220000" expanded="true" signature="627:638" ph=" { " />
-                <marker date="1501827220000" expanded="true" signature="666:672" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="715:944" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="983:994" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="1030:1036" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="1102:1208" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="1277:1763" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="1796:2180" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="2233:2524" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="2568:2579" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="2609:2615" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="2655:2899" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="2927:3041" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="3071:3082" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="3147:3153" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="3166:3221" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="3277:7521" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="3668:3750" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="3852:3927" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="3966:3981" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="4020:4030" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="4149:4610" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="4656:4671" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="4693:4703" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="4740:4755" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="4776:4786" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="4824:4839" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="4875:4885" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="4924:4939" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="4976:4986" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="5025:5040" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="5063:5073" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="5132:5240" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="5298:5406" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="5464:5479" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="5523:5533" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="5574:5676" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="5741:5849" ph="{...}" />
-                <marker date="1501827220000" expanded="false" signature="5889:5904" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="5952:5962" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="6001:6016" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="6063:6073" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="6114:6129" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="6172:6182" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="6234:6249" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="6274:6284" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="6316:6637" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="6681:7109" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="7144:7515" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="7559:7667" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="7650:7661" ph="{}" />
-                <marker date="1501827220000" expanded="true" signature="7702:8572" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="7760:7771" ph="{}" />
-                <marker date="1501827220000" expanded="false" signature="7809:7824" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="7848:7858" ph=" }" />
-                <marker date="1501827220000" expanded="false" signature="7897:7912" ph=" { " />
-                <marker date="1501827220000" expanded="false" signature="7937:7947" ph=" }" />
-                <marker date="1501827220000" expanded="true" signature="8011:8328" ph="{...}" />
-                <marker date="1501827220000" expanded="true" signature="8398:8566" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BannerController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="77">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,27 +118,19 @@
       <file leaf-file-name="NewsService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#578#579#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#662#663#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java">
+      <file leaf-file-name="NewsRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -280,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/html/activityDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/App.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/Sct.java" />
@@ -305,13 +244,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/CtController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/NewsDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/NewsConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" />
       </list>
     </option>
   </component>
@@ -329,10 +269,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
-    <option name="y" value="-180" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -457,32 +395,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="banners" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -868,7 +781,9 @@
       <workItem from="1527081504816" duration="32000" />
       <workItem from="1529570775466" duration="45007000" />
       <workItem from="1530346226950" duration="5734000" />
-      <workItem from="1530515619032" duration="7900000" />
+      <workItem from="1530515619032" duration="15462000" />
+      <workItem from="1530682023773" duration="56000" />
+      <workItem from="1530682098624" duration="1122000" />
     </task>
     <task id="LOCAL-00001" summary="发布活动">
       <created>1523093040128</created>
@@ -902,41 +817,41 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123629000" />
+    <option name="totallyTimeSpent" value="132369000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2960199" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39920557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2960199" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326713" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171459" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27085853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23032904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39920557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1022,12 +937,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java</url>
-          <line>22</line>
+          <line>17</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java</url>
-          <line>119</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -1037,60 +952,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/CommentDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/UserActivityRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/UserActivityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/UserConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/UserActivityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/ActivityController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/html/activityDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="122" column="46" lean-forward="false" selection-start-line="122" selection-start-column="46" selection-end-line="122" selection-end-column="46" />
-          <folding>
-            <marker date="1526647982000" expanded="true" signature="9638:9646" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,16 +966,6 @@
         <state relative-caret-position="93">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,7 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-556">
           <caret line="65" column="109" lean-forward="true" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="109" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,14 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/Sct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1202,14 +1049,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/ActivityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/ActivityConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/CtConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1225,8 +1065,8 @@
         <state relative-caret-position="150">
           <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="e#349#350#0" expanded="false" />
-            <element signature="e#388#389#0" expanded="false" />
+            <element signature="e#307#308#0" expanded="false" />
+            <element signature="e#346#347#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1260,14 +1100,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/ActivityDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1309,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="100" lean-forward="false" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,8 +1166,8 @@
         <state relative-caret-position="135">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding>
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="false" />
+            <element signature="e#387#388#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1346,15 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/Ct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1374,152 +1195,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.6.RELEASE/spring-data-commons-1.13.6.RELEASE.jar!/org/springframework/data/domain/Sort.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1715#1716#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="123" column="57" lean-forward="false" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="120">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/Student.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/Ct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/Sct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/ActivityOutline.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/ActivityDTO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/UserActivityRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/ActivityService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="75" column="15" lean-forward="false" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+        <state relative-caret-position="1410">
+          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/NewsDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/NewsDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.6.RELEASE/spring-data-commons-1.13.6.RELEASE.jar!/org/springframework/data/domain/Sort.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="123" column="57" lean-forward="false" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
-          <folding>
-            <marker date="1501827220000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1501827220000" expanded="false" signature="155:349" ph="..." />
-            <marker date="1501827220000" expanded="true" signature="627:638" ph=" { " />
-            <marker date="1501827220000" expanded="true" signature="666:672" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="715:944" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="983:994" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="1030:1036" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="1102:1208" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="1277:1763" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="1796:2180" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="2233:2524" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="2568:2579" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="2609:2615" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="2655:2899" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="2927:3041" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="3071:3082" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="3147:3153" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="3166:3221" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="3277:7521" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="3668:3750" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="3852:3927" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="3966:3981" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4020:4030" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="4149:4610" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="4656:4671" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4693:4703" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="4740:4755" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4776:4786" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="4824:4839" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4875:4885" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="4924:4939" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="4976:4986" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="5025:5040" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="5063:5073" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="5132:5240" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="5298:5406" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="5464:5479" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="5523:5533" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="5574:5676" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="5741:5849" ph="{...}" />
-            <marker date="1501827220000" expanded="false" signature="5889:5904" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="5952:5962" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="6001:6016" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="6063:6073" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="6114:6129" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="6172:6182" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="6234:6249" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="6274:6284" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="6316:6637" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="6681:7109" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7144:7515" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7559:7667" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7650:7661" ph="{}" />
-            <marker date="1501827220000" expanded="true" signature="7702:8572" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="7760:7771" ph="{}" />
-            <marker date="1501827220000" expanded="false" signature="7809:7824" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="7848:7858" ph=" }" />
-            <marker date="1501827220000" expanded="false" signature="7897:7912" ph=" { " />
-            <marker date="1501827220000" expanded="false" signature="7937:7947" ph=" }" />
-            <marker date="1501827220000" expanded="true" signature="8011:8328" ph="{...}" />
-            <marker date="1501827220000" expanded="true" signature="8398:8566" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="77">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>

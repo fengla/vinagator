@@ -50,7 +50,7 @@ public class NewsController {
         //todo: 现在的冷启动策略就展示每个类别的最新更新的app吧。后续再调整排序策略（权重进行，综合：更新时间，关注人数，编辑评分等）
 
         //最新app = 按照更新时间排序降序的最近几个app
-        String sortProperty = "updateDate";
+        String sortProperty = "ts";
         Sort.Direction direction = Sort.Direction.DESC;//降序
         news = newsService.findNews(curPage, direction, sortProperty);
 

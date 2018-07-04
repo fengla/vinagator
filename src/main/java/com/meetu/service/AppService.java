@@ -46,6 +46,15 @@ public class AppService {
         return appRepository.findByCt(ct, pageable);
     }
 
+    //搜索
+    //todo：搜索接口每一刷显示几条信息？与普通页面展示量一样吗？还是一下子展示所有结果？（看美团外卖的实现，并不是一下子展示所有，而是上拉加载更多来实现的）
+    public Page<AppDTO> searchApps(String keyword, int curPage, Sort.Direction direction, String sortProperty){
+
+        Sort sort = new Sort(direction, sortProperty);
+        Pageable pageable = new PageRequest(curPage, 10, sort);
+        return appRepository.findByKeywordContaining("%"+keyword+"%", pageable);//模糊匹配的两个%
+    }
+
     public AppDTO findById(Long appId){
         return appRepository.findById(appId);
     }

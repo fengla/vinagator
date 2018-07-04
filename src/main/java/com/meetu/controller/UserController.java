@@ -1,7 +1,5 @@
 package com.meetu.controller;
 
-import com.meetu.data.Student;
-import com.meetu.data.User;
 import com.meetu.data.UserEase;
 import com.meetu.dto.UserDTO;
 import com.meetu.service.UserService;
@@ -10,9 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Random;
 
 @Log4j
 @Controller

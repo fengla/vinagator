@@ -1,9 +1,7 @@
 package com.meetu.controller;
 
-import com.meetu.data.Ct;
 import com.meetu.dto.AppDTO;
 import com.meetu.dto.CtDTO;
-import com.meetu.service.ActivityService;
 import com.meetu.service.AppService;
 import com.meetu.service.CtService;
 import lombok.extern.slf4j.Slf4j;
@@ -133,7 +131,6 @@ public class AdminController {
 
 
 
-
             log.warn("appDTO:" + appDTO);
             //todo:下面开始解析文件，存mongo
 
@@ -153,9 +150,7 @@ public class AdminController {
             return "pubAppFailed";//返回到这个页面提示发布失败，以及详细信息，随后6s后自动跳转活动布页面（用户也可以点击立即跳转）
         }
 
-
         return appDTO;//发布活动后进入app详情页面，但是这里应该标识出"待审核"
-
     }
 
     @ResponseBody
@@ -164,27 +159,7 @@ public class AdminController {
 
         log.warn("ctid:" + ctid);
 
-//        List<Sct> scts = new ArrayList<>();
-//        Sct sct1 = new Sct();
-//        sct1.setId(1l);
-//        sct1.setName("二级分类1");
-//        Sct sct2 = new Sct();
-//        sct2.setId(2l);
-//        sct2.setName("二级分类2");
-//        Sct sct3 = new Sct();
-//        sct3.setId(3l);
-//        sct3.setName("二级分类3");
-//        scts.add(sct1);
-//        scts.add(sct2);
-//        scts.add(sct3);
         Map<Long, String> scts = new HashMap<>();
-//        scts.put(1l, "二级分类1");
-//        scts.put(2l, "二级分类2");
-//        scts.put(3l, "二级分类3");
-
-        //todo: 不用Map,直接返回对象，前端可以处理吗？
-
-
 
         return scts;
     }

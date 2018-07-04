@@ -1,6 +1,5 @@
 package com.meetu.controller;
 
-import com.meetu.service.ActivityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -10,15 +9,16 @@ import javax.servlet.ServletContext;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//todo: 这个是什么时候的代码？是不是可以删除了？？？？？
+
+
 @Slf4j
 @RestController
 public class MainController {
 
     @Autowired
     ServletContext context;//这是干吗的？还有其他什么方式实现文件上传吗？
-
-    @Autowired
-    private ActivityService activityService;
 
     /**
      * 查询【所有】一级分类（即左边栏）

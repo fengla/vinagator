@@ -1,27 +1,14 @@
 package com.meetu.controller;
 
-import com.meetu.data.App;
-import com.meetu.data.CommentDetail;
-import com.meetu.dto.ActivityDTO;
 import com.meetu.dto.AppDTO;
-import com.meetu.dto.CommentDTO;
-import com.meetu.dto.UserDTO;
 import com.meetu.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContext;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Slf4j
@@ -127,6 +114,33 @@ public class AppController {
         String sortProperty = "updateDate";
         Sort.Direction direction = Sort.Direction.DESC;//降序
         apps = appService.findAppsByCT(ct, curPage, direction, sortProperty);
+
+        log.warn(apps.toString());
+
+        return apps;
+    }
+
+    /**
+     * 搜索app(以用户提供的关键词在title, sumamry中进行模糊匹配), 分页展示
+     * @param keyword
+     * @param curPage
+     * @return
+     */
+    @GetMapping("/searchApps")
+    public Object searchApps(String keyword, int curPage){
+        //todo:
+        log.warn("enter searchApps, curPage:" + curPage + ", keyword:" + keyword);
+
+        Page<AppDTO> apps = null;
+
+        //todo: 对于搜索接口而言，每页应该展示几个呢？？？
+
+        //搜索结果的排序策略：标题匹配的优先展示，标题没有匹配上的摘要匹配上的第二优先级展示，同一个优先级中怎么排序呢？（对于ofo小黄车，摩拜这样子本身不含有关键词"共享单车"的，用户搜索时候应该怎么展示呢？）
+        //最新app = 按照更新时间排序降序的最近几个app
+        String sortProperty = "updateDate";
+        Sort.Direction direction = Sort.Direction.DESC;//降序
+        //todo:搜索接口
+        apps = appService.searchApps(keyword, curPage, direction, sortProperty);
 
         log.warn(apps.toString());
 

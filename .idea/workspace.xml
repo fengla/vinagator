@@ -1,46 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed06ce40-b0f8-467f-add5-3d8caccd5e13" name="Default" comment="1.jsp:include公用footer(待测试)">
+    <list default="true" id="ed06ce40-b0f8-467f-add5-3d8caccd5e13" name="Default" comment="1.删除冗余文件；&#10;2.完成搜索接口的服务端实现(springData JPA多字段模糊查询)；&#10;3.bug fix;">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/config/UserAppConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserAppController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/data/UserAppFollowKey.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppCommentDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppFollowDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserNewsCommentDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserNewsFollowDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserAppFollowRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/service/UserAppService.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/config/ActivityConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/config/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/config/AppConfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/config/UserActivityConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AdminController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/CommentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/CommentController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/data/ActivityOutline.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/data/Student.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/dto/ActivityDTO.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/ActivityRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserActivityRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/ActivityService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/UserActivityService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/config/ActivityConfig.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/config/AppConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/config/AppConfig.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/config/UserActivityConfig.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserDTO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetu/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/meetu/service/UserService.java" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/AdminController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/AppController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/AppController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/MainController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/CommentController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/FeedController.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/NewsController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/NewsController.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/controller/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/data/ActivityOutline.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/data/Student.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/dto/ActivityDTO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/ActivityRepository.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/AppRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/repository/AppRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/NewsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/repository/NewsRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/UserActivityRepository.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/ActivityService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/AppService.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/service/AppService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/NewsService.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/service/NewsService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/UserActivityService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/dto/AppDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/dto/AppDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/dto/UserDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/dto/UserDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/repository/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/repository/UserRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meetu/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/meetu/service/UserService.class" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,31 +43,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="29" />
+            <state relative-caret-position="316">
+              <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java">
+      <file leaf-file-name="AppDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+            <state relative-caret-position="120">
+              <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java">
+      <file leaf-file-name="UserAppController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserAppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="-14">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,51 +75,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeedController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java">
+      <file leaf-file-name="UserAppFollowKey.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/UserAppFollowKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state relative-caret-position="179">
+              <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserAppFollowDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppFollowDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/NewsDTO.java">
+      <file leaf-file-name="UserDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/NewsRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="165">
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -146,7 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>web.xml</find>
       <find>tomcat</find>
       <find>mvc</find>
       <find>student</find>
@@ -176,6 +147,7 @@
       <find>CtRepository</find>
       <find>ctRepository</find>
       <find>cts</find>
+      <find>projectId</find>
     </findStrings>
     <replaceStrings>
       <replace>put(1l,</replace>
@@ -188,6 +160,7 @@
       <replace>NewsRepository</replace>
       <replace>newsRepository</replace>
       <replace>newsList</replace>
+      <replace>appid</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -201,25 +174,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/UserEase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/html/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/CommentController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/FollowActivityDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/ImgDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/html/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/html/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserActivityDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/CommentDetail.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserActivityRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/UserActivityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/UserActivityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/ActivityController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/html/activityDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/App.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/Sct.java" />
@@ -229,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/CtService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/CtConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/AppConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/BannerRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/BannerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/BannerConfig.java" />
@@ -248,10 +203,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/NewsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/BannerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/AppService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppCommentDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserNewsCommentDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserNewsFollowDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserAppFollowRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/UserAppFollowService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/service/UserAppService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/config/UserAppConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/data/UserAppFollowKey.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserAppController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppFollowDTO.java" />
       </list>
     </option>
   </component>
@@ -417,26 +390,26 @@
     <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/files/banners" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/img/portrait" />
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/resources/applicationContext" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.meetu.config" />
-      <recent name="com.meetu.controller" />
-      <recent name="com.meetu.service" />
-      <recent name="com.meetu.repository" />
-      <recent name="com.meetu.dto" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/html" />
       <recent name="$PROJECT_DIR$/src/main/webapp/files/portrait" />
       <recent name="$PROJECT_DIR$/src/main/webapp/js" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.meetu.service" />
+      <recent name="com.meetu.config" />
+      <recent name="com.meetu.controller" />
+      <recent name="com.meetu.repository" />
+      <recent name="com.meetu.dto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/files/banners" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/img/portrait" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources/applicationContext" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -783,7 +756,7 @@
       <workItem from="1530346226950" duration="5734000" />
       <workItem from="1530515619032" duration="15462000" />
       <workItem from="1530682023773" duration="56000" />
-      <workItem from="1530682098624" duration="1122000" />
+      <workItem from="1530682098624" duration="7791000" />
     </task>
     <task id="LOCAL-00001" summary="发布活动">
       <created>1523093040128</created>
@@ -813,11 +786,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523171463240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1.删除冗余文件；&#10;2.完成搜索接口的服务端实现(springData JPA多字段模糊查询)；&#10;3.bug fix;">
+      <created>1530690115778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530690115778</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132369000" />
+    <option name="totallyTimeSpent" value="139038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -930,14 +910,15 @@
     <MESSAGE value="1.解决mysql中文乱码问题；&#10;2.解决textArea换行问题；" />
     <MESSAGE value="1.jsp:include公用footer(待测试)" />
     <MESSAGE value="1.活动详情页的评论功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.活动详情页的评论功能" />
+    <MESSAGE value="1.删除冗余文件；&#10;2.完成搜索接口的服务端实现(springData JPA多字段模糊查询)；&#10;3.bug fix;" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.删除冗余文件；&#10;2.完成搜索接口的服务端实现(springData JPA多字段模糊查询)；&#10;3.bug fix;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java</url>
-          <line>17</line>
+          <line>21</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -952,103 +933,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/ActivityController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/activityDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="122" column="46" lean-forward="false" selection-start-line="122" selection-start-column="46" selection-end-line="122" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/StudentController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="59" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="18" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/CommentDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-556">
-          <caret line="65" column="109" lean-forward="true" selection-start-line="65" selection-start-column="109" selection-end-line="65" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/src.zip!/java/lang/annotation/Documented.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/bind/annotation/ResponseBody.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/SctRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/SctDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/ActivityConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/CtConfig.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1144,16 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/CtController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="55" column="22" lean-forward="false" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/html/pubApp.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1183,14 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="24" column="28" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="24" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1255,29 +1121,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/AppRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1305,11 +1155,162 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppCommentDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserNewsCommentDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="32" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserNewsFollowDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/CtController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/config/UserAppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#410#411#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/repository/UserAppFollowRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="77" lean-forward="false" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/service/UserAppService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="70" lean-forward="false" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/FeedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/NewsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/AppDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/dto/UserAppFollowDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/controller/UserAppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetu/data/UserAppFollowKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

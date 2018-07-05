@@ -1,6 +1,5 @@
 package com.meetu.controller;
 
-import com.meetu.dto.AppDTO;
 import com.meetu.dto.NewsDTO;
 import com.meetu.service.NewsService;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.ServletContext;
 import java.util.ArrayList;
 import java.util.List;
+
+
+/**
+ * 信息流（目前只开通搞笑频道。。内涵段子）
+ */
 
 @Slf4j
 @RestController

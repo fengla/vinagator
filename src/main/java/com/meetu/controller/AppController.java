@@ -38,7 +38,7 @@ public class AppController {
     }
 
     /**
-     * 查询全局热门app列表
+     * 查询全局热门app列表 todo: 后期改成真实查询热门app + 分页查询
      */
     @GetMapping("/showHotApps")
     public Object showHotApps(String ct){//这里拿到的都是ct的id；并不是中文名

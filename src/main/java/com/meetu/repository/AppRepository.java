@@ -26,7 +26,7 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
 
     //public List<AppDTO> findAllByDateAfter(String date);//查询当前日期之后的所有活动
 
-    public AppDTO findById(Long appId);//todo: 如果这是不是写的对应的数据库中列的名字这样还能识别出怎么查询吗？测试一下这个方法的使用？看看能否正常识别到？
+    public AppDTO findByAppid(Long appId);//todo: 如果这是不是写的对应的数据库中列的名字这样还能识别出怎么查询吗？测试一下这个方法的使用？看看能否正常识别到？
 
     //todo：分页查询
     public Page<AppDTO> findByUpdateDateNotNull(Pageable pageable);//NotNull这么定义方法名正确吗？

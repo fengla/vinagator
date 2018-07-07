@@ -56,6 +56,6 @@ public class AppService {
     }
 
     public AppDTO findById(Long appId){
-        return appRepository.findById(appId);
+        return appRepository.findByAppid(appId);
     }
 }

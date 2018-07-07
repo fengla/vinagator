@@ -21,7 +21,6 @@ public class AppDTO {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
-    @OneToMany(mappedBy = "appid")
     private Long appid;
 
     private String appName;

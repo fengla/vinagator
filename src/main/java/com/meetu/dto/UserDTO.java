@@ -12,7 +12,6 @@ public class UserDTO {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @OneToMany(mappedBy = "userid")
     private Long userid;//用户在本系统中唯一的不可变的ID,
 
     //这个为主键是有问题的，同一个微信用户可能注册多次（就像当前数据库中序号为1，2的两个用户）。。。。看看其他解决方案把

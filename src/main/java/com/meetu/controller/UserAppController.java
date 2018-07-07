@@ -31,8 +31,8 @@ public class UserAppController {
     @GetMapping("/addFollow")
     public Object register(Long userid, Long appid){
 
-
-        UserAppFollowDTO userAppFollowDTO = new UserAppFollowDTO(userid, appid);
+        long ts = System.currentTimeMillis()/1000;
+        UserAppFollowDTO userAppFollowDTO = new UserAppFollowDTO(userid, appid, ts);
         UserAppFollowDTO userAppFollowDTOSaved = userAppService.follow(userAppFollowDTO);
 
 

@@ -19,20 +19,21 @@ public class UserAppFollowDTO {
 //    @GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
 //    private Long id;
     @Id
-    @ManyToOne
     private Long userid;//名称 todo:这里如果是long会有问题吗？毕竟DTO中定义的是Long
     @Id
-    @ManyToOne
     private Long appid;//图标（路径）保留字段，现在用css样式控制，这个可以暂时废弃不用
+
+    private long ts;
 
 
     public UserAppFollowDTO(){
 
     }
 
-    public UserAppFollowDTO(Long userid, Long appid){
+    public UserAppFollowDTO(Long userid, Long appid, long ts){
         this.userid = userid;
         this.appid = appid;
+        this.ts = ts;
     }
 
     //todo: userid + appid 构成这个数据表的主键（不需要再冗余设计一个单独属于这个表的主键，看看这样是否可以实现）

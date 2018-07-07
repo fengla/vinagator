@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *用户与app之间的关系：评论，关注等
+ */
+
 @Log4j
 @RestController
 public class UserAppController {

@@ -1,10 +1,9 @@
 package com.meetu.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -18,7 +17,13 @@ public class NewsDTO {
 
     private String content;
     private String img;
-    private String remark;
+
     private long ts;
-    private Boolean isGif;
+    private Boolean isGif;//Boolean -> booleans iGif这个字段有什么用？是不是可以不要了？
+
+    @JsonIgnore //此注解的属性，不会被序列化为json传到前端
+    private String remark;
+
+    @Transient
+    private boolean containsImg;
 }

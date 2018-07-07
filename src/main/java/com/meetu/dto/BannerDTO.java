@@ -28,6 +28,8 @@ public class BannerDTO {
 
     private String remark;//说明备注
 
+    //todo:因为要修改颜色的嘛，看看这个颜色数据是写到remark里面（css@@others@@others这样）还是另外再定义一个字段？似乎没必要另外定义字段？毕竟当前这个remark也没什么用
+
     private long updateTime;//更新时间
 
     public BannerDTO(){}

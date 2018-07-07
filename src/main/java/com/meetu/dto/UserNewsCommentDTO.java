@@ -1,11 +1,7 @@
 package com.meetu.dto;
 
-import com.meetu.data.UserAppFollowKey;
-import com.meetu.data.UserNewsFollowKey;
 import lombok.Data;
-
 import javax.persistence.*;
-
 
 /**
  * 记录用户对新闻的评论，以及对评论的回复评论
@@ -13,9 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@IdClass(UserNewsFollowKey.class)
 public class UserNewsCommentDTO {
-
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

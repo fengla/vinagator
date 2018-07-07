@@ -19,6 +19,11 @@ public class UserDTO {
     private String wechat;//wechat
     private String nickName;//用户微信昵称
 
+    //todo: 其他从微信端获取的数据这里再进行定义
+
+
+    private String notification;//list序列化成的字符串（应该是这样的：[notificationId, notificationId, notificationId]）
+
     public UserDTO(Long userid, String wechat, String nickName){
         this.userid = userid;
         this.wechat = wechat;

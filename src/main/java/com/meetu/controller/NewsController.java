@@ -5,10 +5,12 @@ import com.meetu.dto.UserNewsCommentDTO;
 import com.meetu.dto.UserNewsFollowDTO;
 import com.meetu.service.NewsService;
 import com.meetu.service.UserNewsService;
+import com.meetu.util.JsonFieldFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +24,8 @@ import java.util.List;
  */
 
 @Slf4j
-@RestController
+//@RestController
+@Controller
 public class NewsController {
 
     @Autowired
@@ -52,6 +55,7 @@ public class NewsController {
     }
 
     @GetMapping("/getNewsByPage")
+    @JsonFieldFilter(type = NewsDTO.class,exclude = "ts")//把gitPassword字段过滤掉
     public Object getNewsByPage(int curPage){
         //todo:
         log.warn("enter showAppsByCT, curPage:" + curPage);
@@ -65,38 +69,15 @@ public class NewsController {
         Sort.Direction direction = Sort.Direction.DESC;//降序
         news = newsService.findNews(curPage, direction, sortProperty);
 
+        for(NewsDTO cur : news){//todo: news是个Page类型的，可以这样进行遍历吗？
+            if(cur.getImg()!=null && !"".equals(cur.getImg()) && !"null".equals(cur.getImg())){
+                cur.setContainsImg(true);
+            }//todo:不需要else? 因为boolean默认的值就是false?
+        }
+
         log.warn(news.toString());
 
         return news;
-    }
-
-
-    @GetMapping("/followNews")
-    public Object followNews(Long userid, Long newsid, int follow){
-
-        log.warn(String.format("follow news, userid:%f, newsid:%f", userid, newsid));
-
-        long ts = System.currentTimeMillis()/1000;
-        UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, follow, ts);
-        UserNewsFollowDTO userNewsFollowDTOSaved = userNewsService.follow(userNewsFollowDTO);
-
-        return userNewsFollowDTOSaved;
-    }
-
-
-    //小程序前端如何发起post请求？
-    //前端判断新评论是回复评论的还是回复新闻本身的，然后针对的传id回来后端
-    //todo: 第一版本只做对新闻的评论，不做对评论的评论吧
-    @PostMapping("/commentNews")
-    public Object commentNews(Long userid, Long newsid, Long cid_reply, String content){
-
-        log.warn(String.format("comment news, userid:%f, newsid:%f", userid, newsid));
-
-        long ts = System.currentTimeMillis()/1000;
-        UserNewsCommentDTO userNewsCommentDTO = new UserNewsCommentDTO(userid, newsid, cid_reply, content, ts);
-        UserNewsCommentDTO userNewsCommentDTOSaved = userNewsService.addComment(userNewsCommentDTO);
-
-        return userNewsCommentDTOSaved;
     }
 
 

@@ -1,5 +1,7 @@
 package com.meetu.dto;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -41,6 +43,11 @@ public class AppDTO {
     private int ct;//逗号分隔？？这样还是不行。。没办法实现分类别展示。。。如果只能属于一个类别这样倒是也可以。。目前的设计就让一个app只能属于一个类别吧!
     private int sct;//这里直接指ct,sct的id...springData这种如何注解出外键关系
     //前端页面先选择一级分类，如果该一级分类下有二级分类那么才展示二级分类
+
+    @Transient //...先不加注解看看会如何存储？
+    private List<String> previews;//预览图(这个不持久化，但是需要在前端展示)
+    private String previewStr;//预览图（这个需要持久化，但是不在前端展示）
+
 
     public AppDTO(){}
 

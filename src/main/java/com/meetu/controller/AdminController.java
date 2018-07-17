@@ -4,6 +4,7 @@ import com.meetu.dto.AppDTO;
 import com.meetu.dto.CtDTO;
 import com.meetu.service.AppService;
 import com.meetu.service.CtService;
+import com.meetu.util.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -75,7 +76,13 @@ public class AdminController {
 
     @ResponseBody
     @PostMapping("/doPubApp")
-    public Object doLogin(ModelMap modelMap, @RequestParam("iconFile") MultipartFile iconFile, @RequestParam("qrCodeFile") MultipartFile qrCodeFile, ModelMap model, String name,
+    public Object doPubApp(ModelMap modelMap, @RequestParam("iconFile") MultipartFile iconFile, @RequestParam("qrCodeFile") MultipartFile qrCodeFile,
+                           @RequestParam("preview0") MultipartFile preview0,
+                           @RequestParam("preview1") MultipartFile preview1,
+                           @RequestParam("preview2") MultipartFile preview2,
+                           @RequestParam("preview3") MultipartFile preview3,
+                           @RequestParam("preview4") MultipartFile preview4,
+                           ModelMap model, String name,
                           String details, int ct, int sct){//todo：这个modelMap需要吗？（猜想：因为前台展示的数据是存在modelMap中的，所以应该还是必须的。。。）
 
 //        log.warn("details2:"+details2);
@@ -129,7 +136,17 @@ public class AdminController {
 //            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 //            String updateDate = sdf.parse(String.valueOf(System.currentTimeMillis()));
 
-
+            //todo: start 0712
+            //写预览图的属性，测试序列化
+            List<String> previews = new ArrayList<>();
+            previews.add("/this/url1");
+            previews.add("/this/url2");
+            previews.add("/this/url3");
+            appDTO.setPreviews(previews);//todo:list with transiant
+            JsonSerializer jsonFilter = new JsonSerializer();
+            String previewStr = jsonFilter.toJson(previews);//序列化
+            appDTO.setPreviewStr(previewStr);//todo:str with pereist
+            //todo: end 0712
 
             log.warn("appDTO:" + appDTO);
             //todo:下面开始解析文件，存mongo

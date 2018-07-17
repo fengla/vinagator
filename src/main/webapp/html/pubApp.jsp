@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>发布活动 - meetu</title>
+    <title>发布小程序</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -25,8 +25,8 @@
     <%--富文本编辑器测试--%>
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <link href="css/summernote/summernote.css" rel="stylesheet">
+    <script src="js/plugins/summernote/summernote.js"></script>
     <%--富文本编辑器测试--%>
 
 </head>
@@ -36,7 +36,8 @@
         <div class="row">
             <div class="col-lg-12">
                                 <div class="ibox float-e-margins">
-                                    <div class="ibox-title" style="border:0;background-color:#44b549;color:white">
+                                    <%--原始仿微信原生颜色样式：#44b549--%>
+                                    <div class="ibox-title" style="border:0;background-color:#5cadff;color:white">
                                         <%--<img src="img/logo.jpeg" class="img-circle" style="width:48px;height:48px" alt="profile">--%>
                                         <!-- todo: 把字体调大一点 -->
                                          <strong>分享新的小程序 </strong><br>
@@ -102,6 +103,33 @@
                                                 <input type="file" name="qrCodeFile"/>
                                             </div>
                                             <div class="hr-line-dashed"></div>
+
+                                            <%--js可以通过这个id="preview"来识别控件，追加更多图片内容--%>
+                                            <div id="previewOut">
+                                                <div class="form-group" id="preview0">
+                                                    <label class="col-sm-2 control-label">预览图1</label>
+                                                    <input type="file" name="preview0"/>
+                                                </div>
+                                                <div class="form-group" id="preview1" style="display:none">
+                                                    <label class="col-sm-2 control-label">预览图2</label>
+                                                    <input type="file" name="preview1"/>
+                                                </div>
+                                                <div class="form-group" id="preview2" style="display:none">
+                                                    <label class="col-sm-2 control-label">预览图3</label>
+                                                    <input type="file" name="preview2"/>
+                                                </div>
+                                                <div class="form-group" id="preview3" style="display:none">
+                                                    <label class="col-sm-2 control-label">预览图4</label>
+                                                    <input type="file" name="preview3"/>
+                                                </div>
+                                                <div class="form-group" id="preview4" style="display:none">
+                                                    <label class="col-sm-2 control-label">预览图5</label>
+                                                    <input type="file" name="preview4"/>
+                                                </div>
+                                            </div>
+                                            <%--预览图可以设置成js加载控件，如果用户已然添加了，这里才需要继续展示更多的预览图控件--%>
+
+                                            <div class="hr-line-dashed"></div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">分类</label>
                                                 <form:select id="ct" path="cts" name="ct">
@@ -145,7 +173,7 @@
                                             <%--</div>--%>
                                             <%--<div class="hr-line-dashed"></div>--%>
                                             <%--<h3>更多活动相关图片...(让用户可以上传更多图片)</h3>--%>
-                                            <button class="btn btn-sm btn-primary pull-right" data-toggle="tooltip" data-placement="top" type="submit" style="background-color:#44b549;margin-top:10px;margin-bottom:100px"> 发布小程序</button>
+                                            <button class="btn btn-sm btn-primary pull-right" data-toggle="tooltip" data-placement="top" type="submit" style="background-color:#5cadff;margin-top:10px;margin-bottom:100px"> 发布小程序</button>
 
                                         </form>
                                     </div>
@@ -287,10 +315,12 @@
                     },
                     dataType:"json",
                     success:function(text){
-                        console.log(text)
-                        if(text!=null && text!=""){//返回不为空才需要展现二级分类
+                        //alert(text.toString())
+                        //console.log(text)
+
+                        if(isEmpty(text)){//返回不为空才需要展现二级分类
                             document.getElementById("sct").style.display = ""
-                            console.log(text)
+                            //console.log(text)
                             var sct = $("#sct");
                             var str = '';
                             //var data = eval("("+text+")");
@@ -313,9 +343,45 @@
                 });
             });
 
+
+
         });
 
 
     </script>
+
+
+    <%--上传预览图--%>
+    <script type="text/javascript" charset="UTF-8">
+
+        $(function(){
+            $("#preview0").change(function(){//获取标签值
+                //修改标签style
+                var uiPreview1 =document.getElementById("preview1");
+                uiPreview1.style.display="";
+            });
+
+            $("#preview1").change(function(){//获取标签值
+                //修改标签style
+                var uiPreview2 =document.getElementById("preview2");
+                uiPreview2.style.display="";
+            });
+
+            $("#preview2").change(function(){//获取标签值
+                //修改标签style
+                var uiPreview3 =document.getElementById("preview3");
+                uiPreview3.style.display="";
+            });
+
+            $("#preview3").change(function(){//获取标签值
+                //修改标签style
+                var uiPreview4 =document.getElementById("preview4");
+                uiPreview4.style.display="";
+            });
+
+
+        });
+    </script>
+
 </body>
 </html>

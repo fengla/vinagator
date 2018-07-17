@@ -2,17 +2,21 @@ package com.meetu.controller;
 
 import com.meetu.dto.AppDTO;
 import com.meetu.service.*;
+import com.meetu.util.JsonFieldFilter;
+import com.meetu.util.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletContext;
+import java.io.IOException;
 import java.util.*;
 
 @Slf4j
-@RestController
+@Controller
 public class AppController {
 
     @Autowired
@@ -26,6 +30,7 @@ public class AppController {
      * 查询app详细信息
      */
     @GetMapping("/appDetail")
+    @JsonFieldFilter(type = AppDTO.class,exclude = "previewStr")//把gitPassword字段过滤掉
     public Object showAppDetail(Long appId){
 
         //debug
@@ -34,6 +39,19 @@ public class AppController {
         AppDTO appDTO = new AppDTO();
         appDTO = appService.findById(appId);
 
+        //反序列化。。previews
+        if(appDTO!=null && appDTO.getPreviewStr()!=null && !"".equals(appDTO.getPreviewStr())){
+            try {
+                JsonSerializer jsonFilter = new JsonSerializer();
+                List<String> previews = jsonFilter.mapper.readValue(appDTO.getPreviewStr(), List.class);
+                appDTO.setPreviews(previews);
+            }catch(IOException ioe){
+                ioe.printStackTrace();
+            }
+        }
+
+        log.warn("select appDTO by appid, details:" + appDTO);
+
         return appDTO;
     }
 
@@ -41,6 +59,7 @@ public class AppController {
      * 查询全局热门app列表 todo: 后期改成真实查询热门app + 分页查询
      */
     @GetMapping("/showHotApps")
+    @ResponseBody
     public Object showHotApps(String ct){//这里拿到的都是ct的id；并不是中文名
 
         //debug

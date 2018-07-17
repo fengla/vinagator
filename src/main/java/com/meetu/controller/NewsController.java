@@ -1,8 +1,6 @@
 package com.meetu.controller;
 
 import com.meetu.dto.NewsDTO;
-import com.meetu.dto.UserNewsCommentDTO;
-import com.meetu.dto.UserNewsFollowDTO;
 import com.meetu.service.NewsService;
 import com.meetu.service.UserNewsService;
 import com.meetu.util.JsonFieldFilter;
@@ -13,7 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.ServletContext;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,6 @@ import java.util.List;
  */
 
 @Slf4j
-//@RestController
 @Controller
 public class NewsController {
 
@@ -41,6 +38,7 @@ public class NewsController {
      * 查询news
      */
     @GetMapping("/getAllNews")
+    @ResponseBody
     public Object getAllNews(String cur, int limit){
         log.warn(String.format("request allNews, cur:%s, limit:%d", cur, limit));
 

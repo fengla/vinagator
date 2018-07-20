@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserUtil {
 
-    private static final int USERID_LENGTH = 8;//userid长度
+    private static final int USERID_LENGTH = 8;//userid长度(userid仅仅由数字组成)
 
     @Autowired
     private UserService userService;

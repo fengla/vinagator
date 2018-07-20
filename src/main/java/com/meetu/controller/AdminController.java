@@ -2,8 +2,12 @@ package com.meetu.controller;
 
 import com.meetu.dto.AppDTO;
 import com.meetu.dto.CtDTO;
+import com.meetu.dto.PreviewDTO;
 import com.meetu.service.AppService;
 import com.meetu.service.CtService;
+import com.meetu.service.PreviewService;
+import com.meetu.util.AppUtil;
+import com.meetu.util.ImgUtil;
 import com.meetu.util.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +33,15 @@ public class AdminController {
 
     @Autowired
     private AppService appService;
+
+    @Autowired
+    private AppUtil appUtil;
+
+    @Autowired
+    private ImgUtil imgUtil;
+
+    @Autowired
+    private PreviewService previewService;
 
 
     /**
@@ -85,89 +98,115 @@ public class AdminController {
                            ModelMap model, String name,
                           String details, int ct, int sct){//todo：这个modelMap需要吗？（猜想：因为前台展示的数据是存在modelMap中的，所以应该还是必须的。。。）
 
-//        log.warn("details2:"+details2);
-
         AppDTO appDTO;
         try {
             log.warn(String.format("ct:%d, sct:%d", ct, sct));
 
-
-            //todo: 2018-04-06
-            //TODO: 怎么接收前端传来的数据呢？？？String name,String location看看这样能不能接收到数据呢？??
-            //TODO:现在看来文件上传是没有问题了，就看看怎么提交表单？？？
-            //todo: 搜索spriingBoot/springMVC提交表单
-            log.warn("before+details:" + details);
-            details = details.replaceAll("\r\n","<br>");
-            log.warn("after+details:" + details);
+            //因为采用了富文本编辑器，所以这里已经不需要再做空格换行替换之类的操作了
+//            log.warn("before+details:" + details);
+//            details = details.replaceAll("\r\n","<br>");
+//            log.warn("after+details:" + details);
             //tips = tips.replaceAll("\r\n","<br>");
             appDTO = new AppDTO(name, details);
 
+            long appid = appUtil.genAppid();
+            appDTO.setAppid(appid);
+
             appDTO.setCt(ct);
-            if(sct!=0){
+            if(sct != 0){
                 appDTO.setSct(sct);
             }
 
-            //todo:
-            //怎么传userid进来呢？
-            //设置activityId为"201803011526（yyyymmddhhmm）+userid"(userid八位数字，整个id用String表示)
-            //todo:end
-            //log.warn("enter doLaunchActivity, activity:" + activity);
             String uploadPath = context.getRealPath("") + "files" + File.separator;
             //String uploadPath = context.getRealPath("") + File.separator + "temp" + File.separator;
             //todo:为什么下面这个log无法识别？
             log.warn("uploadPath:" + uploadPath);
-            System.out.println("uploadPath:" + uploadPath);
-            //Now do something with file...
+
             String iconUploadPath = uploadPath + "icons" + File.separator;
             String qrcodeUploadPath = uploadPath + "qrcodes" + File.separator;
-            FileCopyUtils.copy(iconFile.getBytes(), new File(iconUploadPath + iconFile.getOriginalFilename()));
 
-            appDTO.setIcon("/files/icons/" + iconFile.getOriginalFilename());
+            //String iconName = iconFile.getOriginalFilename();
+            String suffix = "";
+            String[] tmp = null;
 
-            FileCopyUtils.copy(qrCodeFile.getBytes(), new File(qrcodeUploadPath + qrCodeFile.getOriginalFilename()));
+            tmp = iconFile.getOriginalFilename().split("\\.");
+            if(tmp.length > 1){
+                suffix = "." + tmp[1];
+            }else{
+                log.warn("no suffix of iconFile");
+            }
+            String iconName = imgUtil.genIconid(suffix);
+            FileCopyUtils.copy(iconFile.getBytes(), new File(iconUploadPath + iconName +suffix));
+            appDTO.setIcon("/files/icons/" + iconName + suffix);//todo: iconName其实也就是数据库中的icon id
 
-            appDTO.setQrCode("/files/qrcodes/" + qrCodeFile.getOriginalFilename());
+            //String qrCodeName = qrCodeFile.getOriginalFilename();
+            suffix = "";
+            tmp = qrCodeFile.getOriginalFilename().split("\\.");
+            if(tmp.length > 1){
+                suffix = "." + tmp[1];
+            }else{
+                log.warn("no suffix of qrCodeFile");
+            }
+            String qrCodeName = imgUtil.genQrcodeid(suffix);
+            FileCopyUtils.copy(qrCodeFile.getBytes(), new File(qrcodeUploadPath + qrCodeName + suffix));
+            appDTO.setQrCode("/files/qrcodes/" + qrCodeName + suffix);
 
-            //当前日期
-            //数据库中还是存储时间戳吧
-            long updateDate = System.currentTimeMillis()/1000;//s
-            log.warn("updateDate:" + updateDate);
-            appDTO.setUpdateDate(updateDate);
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-//            String updateDate = sdf.parse(String.valueOf(System.currentTimeMillis()));
-
-            //todo: start 0712
-            //写预览图的属性，测试序列化
+            //todo: 预览图0 ～ 4
+            List<PreviewDTO> previewDTOS = new ArrayList<>();
             List<String> previews = new ArrayList<>();
-            previews.add("/this/url1");
-            previews.add("/this/url2");
-            previews.add("/this/url3");
-            appDTO.setPreviews(previews);//todo:list with transiant
+
+            List<MultipartFile> multipartFiles = new ArrayList<>();
+            multipartFiles.add(preview0);
+            multipartFiles.add(preview1);
+            multipartFiles.add(preview2);
+            multipartFiles.add(preview3);
+            multipartFiles.add(preview4);//todo:这样的代码好像把空的也给上传了？这样会有问题的？？？怎么办how to solve this problem ?
+            String previewUploadPath = uploadPath + "previews" + File.separator;
+            String previewName = "";
+            for(MultipartFile cur : multipartFiles){
+                if(!cur.isEmpty()){
+                    suffix = "";
+                    tmp = cur.getOriginalFilename().split("\\.");
+                    if(tmp.length > 1){
+                        suffix = "." + tmp[1];
+                    }else{
+                        log.warn("no suffix of previewFile");
+                    }
+
+                    if(suffix!=null && !"".equals(suffix)){
+                        previewName = imgUtil.genPreviewid();
+                        //上传文件需要保留原始后缀名
+                        //todo: !!!重要!!! 关于后缀名，这里可以对后缀名进行校验，只允许上传有效的后缀名，防止用户直接上传sql,网页，脚本等；
+                        FileCopyUtils.copy(cur.getBytes(), new File(previewUploadPath + previewName + suffix));
+
+                        previews.add("/files/previews/" + previewName + suffix);
+                        previewDTOS.add(new PreviewDTO(previewName));
+                    }
+                }
+            }
+            appDTO.setPreviews(previews);
             JsonSerializer jsonFilter = new JsonSerializer();
             String previewStr = jsonFilter.toJson(previews);//序列化
-            appDTO.setPreviewStr(previewStr);//todo:str with pereist
-            //todo: end 0712
+            appDTO.setPreviewStr(previewStr);
+
+            previewService.save(previewDTOS);//重载的方法
+            log.warn("[debug]appName:" + name + "previewDTOS:" + previewDTOS);
+            //todo: 预览图end
+
+
+            long updateDate = System.currentTimeMillis()/1000;//s
+            appDTO.setUpdateDate(updateDate);
 
             log.warn("appDTO:" + appDTO);
-            //todo:下面开始解析文件，存mongo
 
-            //todo:稍后放出这个存储的业务逻辑。。。
             appDTO = appService.save(appDTO);//注意这里内外层的返回值不都是void,还可以是AppDTO
 
-
-            //String fileName = iconFile.getOriginalFilename();
-
-            //成功才需要这么设置，失败了就不需要设置了
-            //model.addAttribute("activity", activityDTO);
-
-            //这里加载评论区。。。点击活动详情时候也是这么展示：先从数据库中检索一下此活动id关联的评论，然后便利展示
-            //model.addAttribute("comments", null);
         }catch(IOException e){
             log.error("pubApp failed...");
             return "pubAppFailed";//返回到这个页面提示发布失败，以及详细信息，随后6s后自动跳转活动布页面（用户也可以点击立即跳转）
         }
 
-        return appDTO;//发布活动后进入app详情页面，但是这里应该标识出"待审核"
+        return appDTO;//发布后进入app详情页面，但是这里应该标识出"待审核"
     }
 
     @ResponseBody
@@ -180,6 +219,18 @@ public class AdminController {
 
         return scts;
     }
+
+    @ResponseBody
+    @GetMapping("/validAppid")
+    public Object validAppid(String id){//这里拿到的都是ct的id；并不是中文名
+        //appUtil如果在这里不用注入的方式，直接在本类中进行new AppUtil()会发现appUtil中的appService没有注入成功？why?
+        long appid = Long.parseLong(id);
+        log.warn("appid:" + appid);
+        boolean valid = appUtil.checkValid(appid);
+        return valid;
+    }
+
+
 
 
 

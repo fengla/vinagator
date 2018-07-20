@@ -10,7 +10,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.util.*;
@@ -106,7 +105,7 @@ public class AppController {
 
         //最新app = 按照更新时间排序降序的最近几个app
         String sortProperty = "updateDate";
-        Sort.Direction direction = Sort.Direction.DESC;//降序
+        Sort.Direction direction = Sort.Direction.ASC;//降序 todo:现在这样对不对？？？看看怎么展示才对。。。最新发布的app这里怎么做拉动翻页？
         apps = appService.findApps(curPage, direction, sortProperty);
 
         log.warn(apps.toString());
@@ -121,6 +120,7 @@ public class AppController {
      * @return
      */
     @GetMapping("/getAppsByCT")
+    @ResponseBody
     public Object getAppsByCT(int ct, int curPage){
         //todo:
         log.warn("enter showAppsByCT, curPage:" + curPage + ", ct:" + ct);
@@ -146,6 +146,7 @@ public class AppController {
      * @return
      */
     @GetMapping("/searchApps")
+    @ResponseBody
     public Object searchApps(String keyword, int curPage){
         //todo:
         log.warn("enter searchApps, curPage:" + curPage + ", keyword:" + keyword);

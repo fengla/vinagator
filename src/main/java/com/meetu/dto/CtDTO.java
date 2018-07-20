@@ -27,6 +27,8 @@ public class CtDTO {
     private String css;//css样式
     private String url;//跳转地址（路径）
 
+    private boolean valid;//当前是否有效(有效的才需要在前端展示)
+
     private long  updateTime;//更新时间
 
     public CtDTO(){}

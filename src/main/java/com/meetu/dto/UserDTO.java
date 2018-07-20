@@ -19,6 +19,8 @@ public class UserDTO {
     private String wechat;//wechat
     private String nickName;//用户微信昵称
 
+    private long createDate;//用户首次使用本小程序的时间(时间戳s)
+
     //todo: 其他从微信端获取的数据这里再进行定义
 
 

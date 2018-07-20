@@ -48,6 +48,7 @@ public class AppDTO {
     private List<String> previews;//预览图(这个不持久化，但是需要在前端展示)
     private String previewStr;//预览图（这个需要持久化，但是不在前端展示）
 
+    private String remark;//备注信息，保留字段，仅仅用户管理员查看，不向用户暴露
 
     public AppDTO(){}
 

@@ -115,6 +115,15 @@
     <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
     <!--<version>1.5.6.RELEASE</version>-->
     <!--</dependency>-->
+
+    <!--todo: http请求工具包，后面需要把这个替换掉-->
+    <dependency>
+      <groupId>com.yidian.push</groupId>
+      <artifactId>core-lib</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+    <!--todo: http请求工具包，后面需要把这个替换掉-->
+
   </dependencies>
   <!--<build>-->
     <!--<finalName>meetu</finalName>-->

@@ -58,4 +58,12 @@ public class AppService {
     public AppDTO findById(Long appId){
         return appRepository.findByAppid(appId);
     }
+
+    public AppDTO findByIcon(String icon){
+        return appRepository.findByIcon(icon);
+    }
+
+    public AppDTO findByQrCode(String qrcode){
+        return appRepository.findByQrCode(qrcode);
+    }
 }

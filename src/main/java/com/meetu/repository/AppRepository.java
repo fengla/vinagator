@@ -28,6 +28,9 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
 
     public AppDTO findByAppid(Long appId);//todo: 如果这是不是写的对应的数据库中列的名字这样还能识别出怎么查询吗？测试一下这个方法的使用？看看能否正常识别到？
 
+    public AppDTO findByIcon(String icon);
+    public AppDTO findByQrCode(String qrcode);
+
     //todo：分页查询
     public Page<AppDTO> findByUpdateDateNotNull(Pageable pageable);//NotNull这么定义方法名正确吗？
 

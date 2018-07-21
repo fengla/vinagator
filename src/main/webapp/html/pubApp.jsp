@@ -55,15 +55,6 @@
                                                 <div class="col-sm-10"><input type="text" class="form-control" name="name"></div>
                                             </div>
                                             <%--<div class="hr-line-dashed"></div>--%>
-                                            <%--<div class="form-group"><label class="col-sm-2 control-label">活动时间</label>--%>
-                                                <%--<div class="col-sm-10"><input type="text" class="form-control"  name="date"> <span class="help-block m-b-none">可以填写活动开始时间或者活动持续时间段</span>--%>
-                                                <%--</div>--%>
-                                            <%--</div>--%>
-                                            <%--<div class="hr-line-dashed"></div>--%>
-                                            <%--<div class="form-group"><label class="col-sm-2 control-label">活动地点</label>--%>
-                                                <%--<div class="col-sm-10"><input type="text" class="form-control" name="location"> <span class="help-block m-b-none">确保小伙伴们可以顺利抵达目的地，请填写详细位置信息哦</span>--%>
-                                                <%--</div>--%>
-                                            <%--</div>--%>
                                             <%--<div class="form-group">--%>
                                                 <%--<label class="col-sm-2 control-label">费用</label>--%>
 

@@ -1,5 +1,6 @@
 package com.meetu.controller;
 
+import com.meetu.data.PageModel;
 import com.meetu.dto.AppDTO;
 import com.meetu.dto.CtDTO;
 import com.meetu.dto.PreviewDTO;
@@ -11,6 +12,8 @@ import com.meetu.util.ImgUtil;
 import com.meetu.util.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
@@ -209,6 +212,42 @@ public class AdminController {
         return appDTO;//发布后进入app详情页面，但是这里应该标识出"待审核"
     }
 
+    @GetMapping("/editApp")
+    public String editApp(ModelMap model, int curPage){
+        //先把查询所有文章的逻辑写好+分页展示
+        String sortProperty = "updateDate";
+        Sort.Direction direction = Sort.Direction.DESC;
+        Page<AppDTO> appDTOPage = appService.findApps(curPage, direction, sortProperty);//查询所有文章，指定页的文章（所有文章按照插入顺序的倒序来排列）
+        List<AppDTO> appDTOList = appDTOPage.getContent();
+        //log.warn("finad all, docs:" + appDTOList);
+
+        PageModel pageModel = new PageModel();
+        pageModel.setTotalPage(appDTOPage.getTotalPages()-1);//因为2处定义的页面起始索引不一样。。。这里可以统一一下
+        pageModel.setCurPage(curPage);
+        //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
+
+        List<CtDTO> cts = ctService.findAll();
+
+        //设置ctName
+        for(AppDTO appDTO : appDTOList){
+            if(appDTO.getCt() != 0){
+                for(CtDTO ctDTO : cts){
+                    if(ctDTO.getId() == appDTO.getCt()){//todo: ctid与appDTO中的ct属性不一样啊，一个是long 一个是int，这个需要统一一下
+                        appDTO.setCtName(ctDTO.getName());
+                        break;
+                    }
+                }
+            }else{
+                appDTO.setCtName("未设置");
+            }
+        }
+
+        model.addAttribute("pageModel", pageModel);
+        model.addAttribute("appDTOList", appDTOList);
+        model.addAttribute("cts", cts);
+        return "AppEdit";
+    }
+
     @ResponseBody
     @GetMapping("/listScts")
     public Object listScts(String ctid){//这里拿到的都是ct的id；并不是中文名
@@ -220,16 +259,59 @@ public class AdminController {
         return scts;
     }
 
+//    @ResponseBody
+//    @GetMapping("/validAppid")
+//    public Object validAppid(String id){//这里拿到的都是ct的id；并不是中文名
+//        //appUtil如果在这里不用注入的方式，直接在本类中进行new AppUtil()会发现appUtil中的appService没有注入成功？why?
+//        long appid = Long.parseLong(id);
+//        log.warn("appid:" + appid);
+//        boolean valid = appUtil.checkValid(appid);
+//        return valid;
+//    }
+
+    //todo: 审核只需要ajax执行，然后重新加载这个控件的值就好了，不需要重新加载整个页面
+    @GetMapping("/auditApp")
     @ResponseBody
-    @GetMapping("/validAppid")
-    public Object validAppid(String id){//这里拿到的都是ct的id；并不是中文名
-        //appUtil如果在这里不用注入的方式，直接在本类中进行new AppUtil()会发现appUtil中的appService没有注入成功？why?
-        long appid = Long.parseLong(id);
-        log.warn("appid:" + appid);
-        boolean valid = appUtil.checkValid(appid);
-        return valid;
+    public Object auditApp(String appid, boolean valid){
+
+        log.info("auditApp, appid:" + appid + ", valid:" + valid);
+        //更新字段appDTO
+
+        return "success";
     }
 
+    @GetMapping("/updateCt")
+    @ResponseBody
+    public Object updateCt(String appid, int ct){
+        //todo:对于没有设置的前端拿到的默认值到底是null还是0呢？？？？？因为是int，所以应该是0的吧，应该是不存在null值的
+        log.info("updateCt, appid:" + appid + ", ct:" + ct);
+        //更新字段appDTO
+
+        return "success";
+    }
+
+    @GetMapping("/deleteApp")
+    @ResponseBody
+    public Object deleteApp(String appid){
+
+        log.info("deleteApp, appid:" + appid);
+        //更新字段appDTO
+
+        return "success";
+    }
+
+    //这个需要跳转到编辑app数据的页面中。。。
+    //detail是不是得用之前的那个富文本控件来做
+    //这个页面应该与发布页面是一样的，只不过进入页面的时候需要吧服务端的appDTO数据传过来并展示
+    //保存的时候执行update语句而不是insert
+
+    //todo: 这个不要ResponseBody因为是返回真实jsp页面
+    @GetMapping("/doEditApp")
+    public Object editApp(String appid){
+
+
+        return "doEditApp";
+    }
 
 
 

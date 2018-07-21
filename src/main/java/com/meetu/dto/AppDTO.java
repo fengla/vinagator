@@ -45,6 +45,9 @@ public class AppDTO {
     //前端页面先选择一级分类，如果该一级分类下有二级分类那么才展示二级分类
 
     @Transient //...先不加注解看看会如何存储？
+    private String ctName;
+
+    @Transient //...先不加注解看看会如何存储？
     private List<String> previews;//预览图(这个不持久化，但是需要在前端展示)
     private String previewStr;//预览图（这个需要持久化，但是不在前端展示）
 

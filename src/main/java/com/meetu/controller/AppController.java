@@ -80,6 +80,7 @@ public class AppController {
      */
     @Deprecated
     @GetMapping("/getLatestAppsOld")
+    @ResponseBody
     public Object getLatestAppsOld(){
 
         //debug
@@ -97,6 +98,7 @@ public class AppController {
     }
 
     @GetMapping("/getLatestApps")
+    @ResponseBody
     public Object getLatestApps(int curPage){
 
         log.warn("enter showLastApps, curPage:" + curPage);
@@ -105,7 +107,7 @@ public class AppController {
 
         //最新app = 按照更新时间排序降序的最近几个app
         String sortProperty = "updateDate";
-        Sort.Direction direction = Sort.Direction.ASC;//降序 todo:现在这样对不对？？？看看怎么展示才对。。。最新发布的app这里怎么做拉动翻页？
+        Sort.Direction direction = Sort.Direction.DESC;//降序 todo:现在这样对不对？？？看看怎么展示才对。。。最新发布的app这里怎么做拉动翻页？
         apps = appService.findApps(curPage, direction, sortProperty);
 
         log.warn(apps.toString());

@@ -50,6 +50,11 @@ public class AppDTO {
 
     private String remark;//备注信息，保留字段，仅仅用户管理员查看，不向用户暴露
 
+    private double score;//评分，app在各类榜单下的排序依据
+    //如果在不同榜单下排序依据不一样，后续可以再做score2,score3等，目前只维护一个score就可以了
+
+    private boolean valid;//审核字段，编辑审核合格后再设置为true todo:这样子，自己不主动设置的话，默认值是true还是false ???
+
     public AppDTO(){}
 
     public AppDTO(String name, String detail){

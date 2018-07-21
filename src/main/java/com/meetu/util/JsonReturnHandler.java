@@ -26,10 +26,6 @@ public class JsonReturnHandler implements HandlerMethodReturnValueHandler{
     @Override
     public void handleReturnValue(Object returnObject, MethodParameter paramter,
                                   ModelAndViewContainer container, NativeWebRequest request) throws Exception {
-
-        //debug todo: delete later
-        log.warn("******************wdf*********************");
-
         container.setRequestHandled(true);
         JsonFilterSerializer serializer = new JsonFilterSerializer();
         if(paramter.hasMethodAnnotation(JsonFieldFilter.class)) {//如果有JsonFieldFilter注解，则过滤返回的对象returnObject

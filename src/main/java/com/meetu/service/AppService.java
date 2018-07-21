@@ -34,7 +34,7 @@ public class AppService {
     public Page<AppDTO> findApps(int curPage, Sort.Direction direction, String sortProperty){
 
         Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）
-        Pageable pageable = new PageRequest(curPage, 20, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
+        Pageable pageable = new PageRequest(curPage, 10, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
         return appRepository.findByUpdateDateNotNull(pageable);
     }
 

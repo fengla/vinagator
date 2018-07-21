@@ -42,4 +42,13 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
     //todo: 现在是name,summary,detail都检索，这样会不会比较慢？后期不应该带上detail进行检索？？？
     @Query("select appDTO from AppDTO appDTO where appDTO.appName like :keyword or appDTO.summary like :keyword or appDTO.detail like :keyword")
     public Page<AppDTO> findByKeywordContaining(@Param("keyword") String keyword, Pageable pageable);
+
+    //@Modifying todo: 这个注解是干嘛的？
+    @Query("update AppDTO appDTO set appDTO.valid = valid where appDTO.appid = appid")
+    public void auditByAppid(@Param("valid") boolean valid, @Param("appid") String appid);
+    //上面这个方法返回值是void,那么怎么判断是否执行成功了？
+
+    @Query("update AppDTO appDTO set appDTO.ct = ct where appDTO.appid = appid")
+    public void updateCtByAppid(@Param("ct") int ct, @Param("appid") String appid);
+
 }

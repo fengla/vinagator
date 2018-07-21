@@ -222,7 +222,9 @@ public class AdminController {
         //log.warn("finad all, docs:" + appDTOList);
 
         PageModel pageModel = new PageModel();
-        pageModel.setTotalPage(appDTOPage.getTotalPages()-1);//因为2处定义的页面起始索引不一样。。。这里可以统一一下
+        //todo: importasnt !!!!!!!!!!!!!!!!! 前端展示的页码也不对，都出现了0页了。。。这样会有大问题的
+        pageModel.setTotalPage(appDTOPage.getTotalPages()-1);//todo:因为2处定义的页面起始索引不一样。。。这里可以统一一下。。。不然下面的共几页展示的也不对。
+        //todo: importasnt !!!!!!!!!!!!!!!!!
         pageModel.setCurPage(curPage);
         //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
 
@@ -276,15 +278,16 @@ public class AdminController {
 
         log.info("auditApp, appid:" + appid + ", valid:" + valid);
         //更新字段appDTO
+        //appService.auditByAppid(valid, appid);
 
-        return "success";
+        return "res:success"+"||appid:"+valid;
     }
 
     @GetMapping("/updateCt")
     @ResponseBody
     public Object updateCt(String appid, int ct){
         //todo:对于没有设置的前端拿到的默认值到底是null还是0呢？？？？？因为是int，所以应该是0的吧，应该是不存在null值的
-        log.info("updateCt, appid:" + appid + ", ct:" + ct);
+        log.info("updateCt, appid:" + appid + ", ct:" + ct);//这里是新的分类
         //更新字段appDTO
 
         return "success";
@@ -297,7 +300,7 @@ public class AdminController {
         log.info("deleteApp, appid:" + appid);
         //更新字段appDTO
 
-        return "success";
+        return "暂未上线";
     }
 
     //这个需要跳转到编辑app数据的页面中。。。

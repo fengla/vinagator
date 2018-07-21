@@ -38,17 +38,18 @@
 
                 <div class="col-lg-12">
                     <div class="search-form">
-                        <form action="/findAppsByKeyword" method="get">
+                        <%--todo： wx端需要json数据，但是管理端口需要返回页面，所以管理段需要在adminController中再写一个搜索方法--%>
+                        <form action="/searchAppsAdmin" method="get">
                             <select id="type" name="searchType" class="col-lg-1" style="height:46px;background-color:#1ab394;border-radius:0px;color:white;font-size:17px">
                                 <option value="keyword">关键词</option>
                                 <%--<option value="title">标题</option>--%>
                                 <%--这里可以扩展搜索关键词属性--%>
                             </select>
                             <div class="input-group">
-                                <input type="text" placeholder="请键入搜索内容" name="keyword" class="form-control input-lg">
+                                <input type="text" placeholder="请键入搜索内容(暂未上线)" name="keyword" class="form-control input-lg">
                                 <div class="input-group-btn">
                                     <button class="btn btn-lg btn-primary" type="submit" style="font-size:17px">
-                                        搜索
+                                        搜索$
                                     </button>
                                 </div>
                             </div>
@@ -76,10 +77,11 @@
                                         <th class="col-lg-1">图标</th>
                                         <th class="col-lg-0.5">appid</th>
                                         <th class="col-lg-1">名称</th>
-                                        <th class="col-lg-1">开发者</th>
-                                        <th class="col-lg-2.5">摘要</th>
-                                        <th class="col-lg-1.5">分类</th>
-                                        <th class="col-lg-2">备注</th>
+                                        <th class="col-lg-1.5">开发者</th>
+                                        <th class="col-lg-2">摘要</th>
+                                        <%--<th class="col-lg-2">评分</th>--%>
+                                        <th class="col-lg-1">分类</th>
+                                        <th class="col-lg-2.5">备注</th>
                                         <th class="col-lg-2.5">操作</th>
                                     </tr>
                                     </thead>
@@ -113,16 +115,18 @@
                                                 <%--根据app情况设置这个按钮，如果是已经审核通过,点击设置为不通过，如果不通过则点击变为通过。。。这个需求怎么做？--%>
                                                 <%--删除后还是需要返回当前页面，所以需要带上curPage参数;但是对于令挖几个只是需要ajax请求的并不涉及到页面跳转，因此则不需要带上这个当前页面的参数--%>
                                                 <c:if test="${app.valid eq true}">
-                                                    <a href="/auditApp?appid=${app.appid}&&valid=false" type="button" class="btn btn-primary btn-sm">取消通过</a>
+                                                    <%--<a href="/auditApp?appid=${app.appid}&&valid=false" type="button" class="btn btn-primary btn-sm" onclick="auditApp(${app.appid}, false)">取消通过</a>--%>
+                                                    <a type="button" class="btn btn-primary btn-sm" onclick="auditApp(${app.appid}, false)">取消通过</a>
                                                 </c:if>
                                                 <c:if test="${app.valid eq false}">
-                                                    <a href="/auditApp?appid=${app.appid}&&valid=true" type="button" class="btn btn-primary btn-sm">审核通过</a>
+                                                    <%--<a href="/auditApp?appid=${app.appid}&&valid=true" type="button" class="btn btn-primary btn-sm" onclick="auditApp(${app.appid}, true)">审核通过</a>--%>
+                                                    <a type="button" class="btn btn-primary btn-sm" onclick="auditApp(${app.appid}, true)">审核通过</a>
                                                 </c:if>
 
-                                                <a href="/updateCt?appid=${app.appid}&&ct=${app.ct}" type="button" class="btn btn-info btn-sm">更新分类</a>
+                                                <a type="button" class="btn btn-info btn-sm disabled" onclick="updateCt(${app.appid}, ${app.ct})">更新分类</a>
                                                 <a href="/editApp?appid=${app.appid}&&curPage=${pageModel.curPage}" type="button" class="btn btn-warning btn-sm disabled">编辑</a>
                                                 <%--先不开放删除功能，将这个按键设置为不可点击--%>
-                                                <a href="/deleteApp?appid=${app.appid}" type="button" class="btn btn-danger btn-sm disabled">删除</a>
+                                                <a type="button" class="btn btn-danger btn-sm" onclick="deleteApp(${app.appid})">删除</a>
 
                                             </td>
                                         </tr>
@@ -203,7 +207,7 @@
         <%--}--%>
         pageDiv = "<div class=\"text-center\">\n" +
             "                                    <div class=\"btn-group\">\n" +
-            "                                        <a class=\"btn btn-white\" href=\"/findApps?curPage=1\">第一页</a>";
+            "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=0\">第一页</a>";
 
         if(${pageModel.curPage} > 1){
             pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">上一页</a>";
@@ -229,6 +233,83 @@
         pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.totalPage}\">最后一页</a>";
 
         document.getElementById("pageDiv").innerHTML = pageDiv;
+    </script>
+
+
+    <%--审核，更新分类，删除--%>
+    <script>
+        function auditApp(appid, valid) {
+            //alert("js enter auditApp, appid:" + appid + " ||valid" + valid)
+            // todo: 怎么带参数？这样子手动拼接data可以吗？
+            var data = "appid="+appid+"&&valid="+valid
+            $.ajax({
+                url: 'http://localhost:8080/auditApp' ,
+                type: 'GET',
+                data: data,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    alert("修改成功，刷新页面可见");
+                    //todo: 怎么做：修改成功需要把原先的控件属性及内容替换掉。。
+                    // var obj = document.getElementById(id);
+                    // obj.onclick="auditApp(appid, "+!valid+")"
+                    // obj.value="asdasd"
+
+                    //怎么获取到触发方法的控件，并修改其内容
+                    //this.setValue("修改的")
+                },
+                error: function (returndata) {
+                    alert("修改失败");
+                }
+            });
+        }
+
+        function updateCt(appid, ct) {
+            var data = "appid=" + appid + "&&ct=" + ct
+            $.ajax({
+                url: 'http://localhost:8080/updateCt' ,
+                type: 'GET',
+                data: data,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    alert("修改成功，刷新页面可见");
+                    //todo: 怎么做：修改成功需要把原先的控件属性及内容替换掉。。
+                    // var obj = document.getElementById(id);
+                    // obj.onclick="auditApp(appid, "+!valid+")"
+                    // obj.value="asdasd"
+
+                    //怎么获取到触发方法的控件，并修改其内容
+                    //this.setValue("修改的")
+                },
+                error: function (returndata) {
+                    alert("修改失败");
+                }
+            });
+        }
+
+        function deleteApp(appid) {
+            var data = "appid=" + appid
+            $.ajax({
+                url: 'http://localhost:8080/deleteApp' ,
+                type: 'GET',
+                data: data,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    alert(returndata);
+                },
+                error: function (returndata) {
+                    alert(returndata);
+                }
+            });
+        }
     </script>
 
 </body>

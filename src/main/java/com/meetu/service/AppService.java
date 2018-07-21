@@ -2,6 +2,7 @@ package com.meetu.service;
 
 import com.meetu.dto.AppDTO;
 import com.meetu.repository.AppRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
+@Slf4j
 public class AppService {
 
     @Autowired
@@ -66,4 +68,27 @@ public class AppService {
     public AppDTO findByQrCode(String qrcode){
         return appRepository.findByQrCode(qrcode);
     }
+
+    public boolean auditByAppid(boolean valid, String appid){
+        try {
+            appRepository.auditByAppid(valid, appid);
+        }catch(Exception e){
+            log.error("auditByAppid failed", e);
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean updateCtByAppid(int ct, String appid){
+        try {
+            appRepository.updateCtByAppid(ct, appid);
+        }catch(Exception e){
+            log.error("updateCtByAppid failed", e);
+            return false;
+        }
+        return true;
+    }
+
+
 }

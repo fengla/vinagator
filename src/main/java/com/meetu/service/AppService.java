@@ -9,9 +9,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Slf4j
+@Transactional
 public class AppService {
 
     @Autowired
@@ -69,7 +71,7 @@ public class AppService {
         return appRepository.findByQrCode(qrcode);
     }
 
-    public boolean auditByAppid(boolean valid, String appid){
+    public boolean auditByAppid(boolean valid, long appid){
         try {
             appRepository.auditByAppid(valid, appid);
         }catch(Exception e){
@@ -80,7 +82,7 @@ public class AppService {
     }
 
 
-    public boolean updateCtByAppid(int ct, String appid){
+    public boolean updateCtByAppid(int ct, long appid){
         try {
             appRepository.updateCtByAppid(ct, appid);
         }catch(Exception e){

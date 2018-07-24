@@ -137,16 +137,23 @@ public class AppCrawlerService {
         appDTO.setIcon("/files/icons/" + iconName + suffix);
 
         //todo: qrcode
-        tmp = qrcode.substring(qrcode.length()-lastLength, qrcode.length()).split("\\.");//获取后缀名
-        if(tmp.length > 1){
-            suffix = "." + tmp[1];
+        //qrcode有可能不存在的
+        if(qrcode!=null && !"".equals(qrcode)) {
+            tmp = qrcode.substring(qrcode.length() - lastLength, qrcode.length()).split("\\.");//获取后缀名
+            if (tmp.length > 1) {
+                suffix = "." + tmp[1];
+            } else {
+                log.warn("no suffix of iconFile");
+            }
+            String qrcodeName = imgUtil.genIconid(suffix);//imgUtil当时为什么没有使用静态方法来做。。。应该可以用静态方法来做这个工作的。。。
+            //下载文件到本地，并且用新的名字来生成文件
+            FileUtil.downloadFile(qrcode, qrcodeUploadPath, qrcodeName, suffix);
+            appDTO.setQrCode("/files/qrcodes/" + qrcodeName + suffix);
         }else{
-            log.warn("no suffix of iconFile");
+            //默认qrcode图
+            appDTO.setQrCode("/files/qrcodes/noqrcode.png");
+
         }
-        String qrcodeName = imgUtil.genIconid(suffix);//imgUtil当时为什么没有使用静态方法来做。。。应该可以用静态方法来做这个工作的。。。
-        //下载文件到本地，并且用新的名字来生成文件
-        FileUtil.downloadFile(qrcode, qrcodeUploadPath, qrcodeName, suffix);
-        appDTO.setQrCode("/files/qrcodes/" + qrcodeName + suffix);
 
 
         //todo: preview
@@ -178,6 +185,7 @@ public class AppCrawlerService {
 
         //previewService.save(previewDTOS);//重载的方法...todo:将预览图的名字保存下来......待释放。。。稍后需要把这个方法释放出来。。。!!!!!!!!!important
         log.warn("[debug]appName:" + title + "previewDTOS:" + previewDTOS);
+        previewService.save(previewDTOS);
         //todo: 预览图end
 
 

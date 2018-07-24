@@ -74,59 +74,53 @@
 
                                     <thead>
                                     <tr>
-                                        <th class="col-lg-1">图标</th>
-                                        <th class="col-lg-0.5">appid</th>
+                                        <th class="col-lg-2">物料</th>
+                                        <th class="col-lg-0.5">id</th>
                                         <th class="col-lg-1">名称</th>
-                                        <th class="col-lg-1.5">开发者</th>
-                                        <th class="col-lg-2">摘要</th>
+                                        <th class="col-lg-2.5">url</th>
+                                        <th class="col-lg-1">时间</th>
                                         <%--<th class="col-lg-2">评分</th>--%>
-                                        <th class="col-lg-1">分类</th>
-                                        <th class="col-lg-2.5">备注</th>
-                                        <th class="col-lg-2.5">操作</th>
+                                        <th class="col-lg-1">审核</th>
+                                        <th class="col-lg-2">备注</th>
+                                        <th class="col-lg-2">操作</th>
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                                    <c:forEach items="${appDTOList}" var="app">
+                                    <c:forEach items="${bannerDTOList}" var="banner">
                                         <tr>
                                             <%--这里填写的属性名字就是服务端定义的属性名--%>
-                                            <%--这里第一栏把app的图标也展示出来吧,设置好样式不要太大了--%>
                                             <td>
-                                                <%--图片圆角怎么设置？ --%>
-                                                <img alt="image" class="img-circle" src="http://localhost:8080${app.icon}" style="width:50px;height:50px"/>
+                                                <%--这里图片样式还需要修改 --%>
+                                                <img alt="image" class="" src="http://localhost:8080${banner.img}" style="width:200px;height:100px"/>
+                                                <input type="file" name="iconFile" style="margin-top: 10px"/>
+                                                <%--todo: 图片下方放一个上传文件的,这样虽然展示出来了，但是怎么让这个上传图片的逻辑生效呢？--%>
                                             </td>
-                                            <td>${app.appid}</td>
-                                            <td>${app.appName}</td>
-                                            <td>${app.dev}</td>
-                                            <td>${app.summary}</td>
-                                            <%--ct现在展示的是数字，后面需要修改成中文名，对于没有ct的展示空白，这样更容易识别出来--%>
-                                            <%--分类做成下来菜单，而且可以直接在本页进行更新，ajax请求更新，更新成功或者失败以alert的形式反馈给用户--%>
-                                            <%--下拉菜单用全量分类数据来展示，然后设置selected id为当前app的ct数据--%>
-                                            <%--<td>${app.ct}</td>--%>
                                             <td>
-                                                <%--这里可以包装一个控件用于设置这个下拉菜单的样式--%>
-                                                <form:select id="ct-${app.appid}" path="cts" name="ct">
-                                                    <form:option value="${app.ct}" label="${app.ctName}" />
-                                                    <form:options items="${cts}" itemLabel="name" itemValue="id"/>
-                                                </form:select>
+                                                <input type="text" value="${banner.id}" placeholder="" name="id" class="form-control input-sm">
                                             </td>
-                                            <td>${app.remark}</td>
+
+                                            <td>
+                                                <input type="text" value="${banner.name}" placeholder="" name="name" class="form-control input-sm">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" value="${banner.url}" placeholder="" name="url" class="form-control input-sm">
+                                            </td>
+                                                <%--todo: updateDate就是系统设置的根据修改时间来设置，而不是用户自己编辑,需要做的是格式化展示--%>
+                                            <td>${banner.updateDate}</td>
+                                            <td>${banner.valid}</td>
+                                                <%--todo: valid改成下拉菜单来做--%>
+                                            <td>
+                                                <textarea type="text" placeholder="" name="remark" class="form-control">${banner.remark}</textarea>
+                                            </td>
                                             <td>
                                                 <%--根据app情况设置这个按钮，如果是已经审核通过,点击设置为不通过，如果不通过则点击变为通过。。。这个需求怎么做？--%>
                                                 <%--删除后还是需要返回当前页面，所以需要带上curPage参数;但是对于令挖几个只是需要ajax请求的并不涉及到页面跳转，因此则不需要带上这个当前页面的参数--%>
-                                                <c:if test="${app.valid eq true}">
-                                                    <%--<a href="/auditApp?appid=${app.appid}&&valid=false" type="button" class="btn btn-primary btn-sm" onclick="auditApp(${app.appid}, false)">取消通过</a>--%>
-                                                    <a type="button" class="btn btn-primary btn-sm" id="audit-${app.appid}" onclick="auditApp(${app.appid}, false)">取消通过</a>
-                                                </c:if>
-                                                <c:if test="${app.valid eq false}">
-                                                    <%--<a href="/auditApp?appid=${app.appid}&&valid=true" type="button" class="btn btn-primary btn-sm" onclick="auditApp(${app.appid}, true)">审核通过</a>--%>
-                                                    <a type="button" class="btn btn-primary btn-sm" id="audit-${app.appid}" onclick="auditApp(${app.appid}, true)">审核通过</a>
-                                                </c:if>
 
-                                                <a type="button" class="btn btn-info btn-sm" onclick="updateCt(${app.appid}, ${app.ct})">更新分类</a>
-                                                <a href="/editApp?appid=${app.appid}&&curPage=${pageModel.curPage}" type="button" class="btn btn-warning btn-sm disabled">编辑</a>
+                                                <a href="/updateBanner?id=${banner.id}&&curPage=${pageModel.curPage}" type="button" class="btn btn-warning btn-sm disabled">更新</a>
                                                 <%--先不开放删除功能，将这个按键设置为不可点击--%>
-                                                <a type="button" class="btn btn-danger btn-sm" onclick="deleteApp(${app.appid})">删除</a>
+                                                <a type="button" class="btn btn-danger btn-sm" onclick="deleteBanner(${banner.id})">删除</a>
 
                                             </td>
                                         </tr>
@@ -136,33 +130,11 @@
 
                                 </table>
 
-                                <%--todo: 给下面这个控件取名字，然后根据当前页，以及总共页面数的关系用js来设置这个控件的内容--%>
-                                <%--首页往前，尾页往后怎么处理--%>
-                                <%--href可以改为onclick(page)..然后写个js function就好--%>
                                 <%--<div class="text-center">--%>
-                                    <%--<div class="btn-group">--%>
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=0">第一页</a>--%>
+                                    <%--<div class="btn-group" id="pageDiv">--%>
 
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.curPage-1}">上一页</a>--%>
-
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.curPage-2}">${pageModel.curPage-2}</a>--%>
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.curPage-1}">${pageModel.curPage-1}</a>--%>
-
-                                        <%--<a class="btn btn-white active" href="/findDocs?curPage=${pageModel.curPage}">${pageModel.curPage}</a>--%>
-
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.curPage+1}">${pageModel.curPage+1}</a>--%>
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.curPage+2}">${pageModel.curPage+2}</a>--%>
-
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.curPage+1}">下一页</a>--%>
-
-                                        <%--<a class="btn btn-white" href="/findDocs?curPage=${pageModel.totalPage-1}">最后一页</a>--%>
                                     <%--</div>--%>
                                 <%--</div>--%>
-                                <div class="text-center">
-                                    <div class="btn-group" id="pageDiv">
-
-                                    </div>
-                                </div>
 
 
                                 <div class="pull-right">

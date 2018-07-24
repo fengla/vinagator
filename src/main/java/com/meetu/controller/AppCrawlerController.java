@@ -60,9 +60,9 @@ public class AppCrawlerController {
 
     @GetMapping("/crawler")
     @ResponseBody
-    public Object launchActivity(String url){
+    public Object crawler(String url){
 
-        log.warn("srcUrl:" + url);
+        log.warn("url:" + url);
 
         try {
             Map<String, Object> params = new HashMap<String, Object>();//目前对于damengxiang.me这个网站的请求，这个参数没有用处
@@ -72,11 +72,12 @@ public class AppCrawlerController {
 
             AppDTO appDTO = appCrawlerService.encapAppDTO(appJson);
 
-            //appCrawlerService.save(appDTO);
+            appCrawlerService.save(appDTO);
 
             return appDTO;
         }catch(Exception e){
             log.error("crawler app failed", e);
+            //如果失败了需要回滚？把之前存入系统的previewDTOs也需要删除掉
         }
         return "crawl app failed";
     }

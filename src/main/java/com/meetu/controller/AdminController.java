@@ -2,9 +2,11 @@ package com.meetu.controller;
 
 import com.meetu.data.PageModel;
 import com.meetu.dto.AppDTO;
+import com.meetu.dto.BannerDTO;
 import com.meetu.dto.CtDTO;
 import com.meetu.dto.PreviewDTO;
 import com.meetu.service.AppService;
+import com.meetu.service.BannerService;
 import com.meetu.service.CtService;
 import com.meetu.service.PreviewService;
 import com.meetu.util.AppUtil;
@@ -45,6 +47,9 @@ public class AdminController {
 
     @Autowired
     private PreviewService previewService;
+
+    @Autowired
+    private BannerService bannerService;
 
 
     /**
@@ -212,6 +217,12 @@ public class AdminController {
         return appDTO;//发布后进入app详情页面，但是这里应该标识出"待审核"
     }
 
+    @GetMapping("/crawlApp")
+    public String crawlApp(ModelMap modelMap){
+        return "AppCrawler";
+    }//这里进入填写地址页面，然后请求CrawlerController
+
+
     @GetMapping("/editApp")
     public String editApp(ModelMap model, int curPage){
         //先把查询所有文章的逻辑写好+分页展示
@@ -278,9 +289,9 @@ public class AdminController {
 
         log.info("auditApp, appid:" + appid + ", valid:" + valid);
         //更新字段appDTO
-        //appService.auditByAppid(valid, appid);
+        boolean res = appService.auditByAppid(valid, Long.parseLong(appid));//todo: appid还是需要修改成String,不能是现在这样的long
 
-        return "res:success"+"||appid:"+valid;
+        return res;
     }
 
     @GetMapping("/updateCt")
@@ -289,8 +300,9 @@ public class AdminController {
         //todo:对于没有设置的前端拿到的默认值到底是null还是0呢？？？？？因为是int，所以应该是0的吧，应该是不存在null值的
         log.info("updateCt, appid:" + appid + ", ct:" + ct);//这里是新的分类
         //更新字段appDTO
+        boolean res = appService.updateCtByAppid(ct, Long.parseLong(appid));//todo: appid还是需要修改成String,不能是现在这样的long
 
-        return "success";
+        return res;
     }
 
     @GetMapping("/deleteApp")
@@ -299,6 +311,8 @@ public class AdminController {
 
         log.info("deleteApp, appid:" + appid);
         //更新字段appDTO
+
+        //删除的时候不仅仅需要删除appDTO表中的数据，还要把这个app关联的其他表中的数据都删除掉
 
         return "暂未上线";
     }
@@ -317,7 +331,57 @@ public class AdminController {
     }
 
 
+    @GetMapping("/editBanner")
+    public String editBanner(ModelMap model, int curPage){
+        //先把查询所有文章的逻辑写好+分页展示
+        String sortProperty = "updateDate";
+        Sort.Direction direction = Sort.Direction.DESC;
+        Page<BannerDTO> bannerDTOPage = bannerService.findBanners(curPage, direction, sortProperty);//查询所有文章，指定页的文章（所有文章按照插入顺序的倒序来排列）
+        List<BannerDTO> bannerDTOList = bannerDTOPage.getContent();
+        //log.warn("finad all, docs:" + appDTOList);
 
+        PageModel pageModel = new PageModel();
+        //todo: importasnt !!!!!!!!!!!!!!!!! 前端展示的页码也不对，都出现了0页了。。。这样会有大问题的
+        pageModel.setTotalPage(bannerDTOPage.getTotalPages()-1);//todo:因为2处定义的页面起始索引不一样。。。这里可以统一一下。。。不然下面的共几页展示的也不对。
+        //todo: importasnt !!!!!!!!!!!!!!!!!
+        pageModel.setCurPage(curPage);
+        //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
+
+
+
+        model.addAttribute("pageModel", pageModel);
+        model.addAttribute("bannerDTOList", bannerDTOList);
+
+        return "BannerEdit";
+    }
+
+    @GetMapping("/editCt")
+    public String editCt(ModelMap model, int curPage){
+        //先把查询所有文章的逻辑写好+分页展示
+        String sortProperty = "updateDate";
+        Sort.Direction direction = Sort.Direction.DESC;
+        Page<CtDTO> ctDTOPage = ctService.findCts(curPage, direction, sortProperty);//查询所有文章，指定页的文章（所有文章按照插入顺序的倒序来排列）
+        List<CtDTO> ctDTOList = ctDTOPage.getContent();
+
+
+        //debug
+        log.warn("finad all, cts:" + ctDTOList);
+
+
+        PageModel pageModel = new PageModel();
+        //todo: importasnt !!!!!!!!!!!!!!!!! 前端展示的页码也不对，都出现了0页了。。。这样会有大问题的
+        pageModel.setTotalPage(ctDTOPage.getTotalPages()-1);//todo:因为2处定义的页面起始索引不一样。。。这里可以统一一下。。。不然下面的共几页展示的也不对。
+        //todo: importasnt !!!!!!!!!!!!!!!!!
+        pageModel.setCurPage(curPage);
+        //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
+
+
+
+        model.addAttribute("pageModel", pageModel);
+        model.addAttribute("ctDTOList", ctDTOList);
+
+        return "CtEdit";
+    }
 
 
 

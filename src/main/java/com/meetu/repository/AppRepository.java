@@ -4,6 +4,7 @@ import com.meetu.dto.AppDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -43,12 +44,13 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
     @Query("select appDTO from AppDTO appDTO where appDTO.appName like :keyword or appDTO.summary like :keyword or appDTO.detail like :keyword")
     public Page<AppDTO> findByKeywordContaining(@Param("keyword") String keyword, Pageable pageable);
 
-    //@Modifying todo: 这个注解是干嘛的？
-    @Query("update AppDTO appDTO set appDTO.valid = valid where appDTO.appid = appid")
-    public void auditByAppid(@Param("valid") boolean valid, @Param("appid") String appid);
+    @Modifying //todo: 这个注解是干嘛的？
+    @Query("update AppDTO appDTO set appDTO.valid =:valid where appDTO.appid =:appid")
+    public void auditByAppid(@Param("valid") boolean valid, @Param("appid") long appid);
     //上面这个方法返回值是void,那么怎么判断是否执行成功了？
 
-    @Query("update AppDTO appDTO set appDTO.ct = ct where appDTO.appid = appid")
-    public void updateCtByAppid(@Param("ct") int ct, @Param("appid") String appid);
+    @Modifying
+    @Query("update AppDTO appDTO set appDTO.ct =:ct where appDTO.appid =:appid")
+    public void updateCtByAppid(@Param("ct") int ct, @Param("appid") long appid);
 
 }

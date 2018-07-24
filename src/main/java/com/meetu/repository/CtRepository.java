@@ -1,9 +1,9 @@
 package com.meetu.repository;
 
 import com.meetu.dto.CtDTO;
-import com.meetu.dto.CtDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
-
 import java.util.List;
 
 
@@ -20,4 +20,6 @@ public interface CtRepository extends CrudRepository<CtDTO, Long>{
 //    public List<CtDTO> findAllByDateAfter(long date);//查询当前日期之后的所有活动
 
     public CtDTO findById(Long id);
+
+    public Page<CtDTO> findByUpdateDateNotNull(Pageable pageable);
 }

@@ -29,7 +29,9 @@ public class CtDTO {
 
     private boolean valid;//当前是否有效(有效的才需要在前端展示)
 
-    private long  updateTime;//更新时间
+    private long  updateDate;//更新时间
+
+    private String remark;
 
     public CtDTO(){}
 

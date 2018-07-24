@@ -1,6 +1,9 @@
 package com.meetu.repository;
 
+import com.meetu.dto.AppDTO;
 import com.meetu.dto.BannerDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -20,4 +23,6 @@ public interface BannerRepository extends CrudRepository<BannerDTO, Long>{
 //    public List<BannerDTO> findAllByDateAfter(long date);//查询当前日期之后的所有活动
 
     public BannerDTO findById(Long id);
+
+    public Page<BannerDTO> findByUpdateDateNotNull(Pageable pageable);
 }

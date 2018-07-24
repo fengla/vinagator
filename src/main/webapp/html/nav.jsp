@@ -21,10 +21,10 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-cloud-upload"></i> <span class="nav-label">APP上传$ </span></a>
+                <a href="#"><i class="fa fa-cloud-upload"></i> <span class="nav-label">APP上传 </span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="/docUpload" class="disabled">手动上传</a></li>
-                    <li><a href="/fileUpload">自动上传</a></li>
+                    <li><a href="#" class="disabled">手动上传</a></li>
+                    <li><a href="/crawlApp">自动上传</a></li>
                 </ul>
             </li>
 
@@ -33,14 +33,14 @@
             </li>
 
             <li>
-                <a href="/findDocs?currentPage=1" class="disabled"><i class="fa fa-bars"></i> <span class="nav-label">信息流管理$</span></a>
+                <a href="#" class="disabled"><i class="fa fa-bars"></i> <span class="nav-label">信息流管理</span></a>
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-gear"></i> <span class="nav-label">系统管理$ </span></a>
+                <a href="#"><i class="fa fa-gear"></i> <span class="nav-label">系统管理 </span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="/docUpload" class="disabled">Banner管理</a></li>
-                    <li><a href="/fileUpload" class="disabled">分类管理</a></li>
+                    <li><a href="/editBanner?curPage=0" class="disabled">Banner管理</a></li>
+                    <li><a href="/editCt?curPage=0" class="disabled">分类信息管理</a></li>
                 </ul>
             </li>
 

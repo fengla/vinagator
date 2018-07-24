@@ -23,5 +23,7 @@ public interface BannerRepository extends CrudRepository<BannerDTO, Long>{
 
     public BannerDTO findById(Long id);
 
+    public BannerDTO deleteById(Long id);
+
     public Page<BannerDTO> findByUpdateDateNotNull(Pageable pageable);
 }

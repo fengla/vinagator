@@ -10,6 +10,7 @@ import com.navi.service.BannerService;
 import com.navi.service.CtService;
 import com.navi.service.PreviewService;
 import com.navi.util.AppUtil;
+import com.navi.util.FileUtil;
 import com.navi.util.ImgUtil;
 import com.navi.util.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
@@ -353,6 +354,37 @@ public class AdminController {
         model.addAttribute("bannerDTOList", bannerDTOList);
 
         return "BannerEdit";
+    }
+
+    @PostMapping("/updateBanner")
+    @ResponseBody
+    public String updateBanner(ModelMap model, String name, String remark){//若干参数，还需要接收图片？可以判断用户到底有没有新上传图片。。
+        //todo
+        //因为数据量本身就不大，所以完全可以每次更新一条记录中的所有字段，不用特别识别到底修改哪个字段再指定更新某个字段
+
+        return "success";
+    }
+
+    @GetMapping("/delBanner")
+    @ResponseBody
+    public String delBanner(long bannerid){
+
+        try {
+            //1.删除文件系统中存储的图片
+            //FileUtil.deleteFile(filePath);
+            BannerDTO bannerDTO = bannerService.findById(bannerid);
+            String rawPath = bannerDTO.getImg();
+            FileUtil.deleteFile(rawPath);//todo： 这样应该不可以吧？毕竟还是需要处理一下相对路径？？？
+
+
+            //2.删数据表中的记录
+            bannerDTO = bannerService.deleteById(bannerid);
+        }catch(Exception e){
+            log.error("deleteBanner failed, detail:", e);
+            return "failed";
+        }
+
+        return "success";
     }
 
     @GetMapping("/editCt")

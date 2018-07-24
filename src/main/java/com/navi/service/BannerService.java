@@ -27,6 +27,10 @@ public class BannerService {
         return bannerRepository.findById(bannerId);
     }
 
+    public BannerDTO deleteById(Long bannerId){
+        return bannerRepository.deleteById(bannerId);
+    }
+
     public Page<BannerDTO> findBanners(int curPage, Sort.Direction direction, String sortProperty){
 
         Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）

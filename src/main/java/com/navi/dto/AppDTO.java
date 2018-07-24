@@ -8,7 +8,7 @@ import java.util.List;
 //import org.springframework.data.annotation.Id;
 
 /**
- * 一级分类
+ * App
  */
 
 @Entity
@@ -18,8 +18,8 @@ public class AppDTO {
     //todo:springData后续这个DTO发生改变可以影响传递到mysql中吗？增加字段，删除字段，修改字段名都可以？
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
-    private Long appid;
+    //@GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
+    private long appid;
 
     private String appName;
     private String icon;//图标
@@ -40,10 +40,10 @@ public class AppDTO {
     private int sct;//这里直接指ct,sct的id...springData这种如何注解出外键关系
     //前端页面先选择一级分类，如果该一级分类下有二级分类那么才展示二级分类
 
-    @Transient //...先不加注解看看会如何存储？
+    @Transient
     private String ctName;
 
-    @Transient //...先不加注解看看会如何存储？
+    @Transient
     private List<String> previews;//预览图(这个不持久化，但是需要在前端展示)
     private String previewStr;//预览图（这个需要持久化，但是不在前端展示）
 
@@ -60,10 +60,6 @@ public class AppDTO {
         this.appName = name;
         this.detail = detail;
     }
-
-    //亟待处理web端上传app的需求。。。
-    //周末看看怎么发布，申请空间域名准备备案等；
-    //下周处理完就可以申请审核上线了
 
 
 }

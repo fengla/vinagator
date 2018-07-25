@@ -19,7 +19,7 @@ public class CtDTO {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
-    private Long id;
+    private long id;
 
     private String name;//名称
     private String icon;//图标（路径）保留字段，现在用css样式控制，这个可以暂时废弃不用

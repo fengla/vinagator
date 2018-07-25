@@ -36,8 +36,8 @@ public class AppDTO {
 //    @Column(name = "sct")
 //    private Set<Integer> sct;//sctId ... ctId(外键指明归属一级分类)
     //todo:list类型通过springData存储到mysql中是什么样子？后面又该如何解析成list返回服务端进而返回前端？
-    private int ct;//逗号分隔？？这样还是不行。。没办法实现分类别展示。。。如果只能属于一个类别这样倒是也可以。。目前的设计就让一个app只能属于一个类别吧!
-    private int sct;//这里直接指ct,sct的id...springData这种如何注解出外键关系
+    private long ct;//逗号分隔？？这样还是不行。。没办法实现分类别展示。。。如果只能属于一个类别这样倒是也可以。。目前的设计就让一个app只能属于一个类别吧!
+    private long sct;//这里直接指ct,sct的id...springData这种如何注解出外键关系
     //前端页面先选择一级分类，如果该一级分类下有二级分类那么才展示二级分类
 
     @Transient

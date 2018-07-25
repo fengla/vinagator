@@ -4,38 +4,56 @@ import com.navi.dto.AppDTO;
 import com.navi.dto.UserAppFollowDTO;
 import com.navi.repository.UserAppFollowRepository;
 import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-@Log4j
+import javax.transaction.Transactional;
+
+@Slf4j
+@Transactional
 public class UserAppService {
+
+    private final int PAGESIZE = 4;
 
     @Autowired
     private UserAppFollowRepository userAppFollowRepository;
 
 
     public UserAppFollowDTO follow(UserAppFollowDTO userAppFollowDTO){
-
+        log.info("enter followApp, userAppFollowDTP:" + userAppFollowDTO);
         UserAppFollowDTO userAppFollowDTOSaved = userAppFollowRepository.save(userAppFollowDTO);
 
         return userAppFollowDTOSaved;
     }
 
-    public Page<AppDTO> findFollowedApps(int curPage, Sort.Direction direction, String sortProperty){
+    public boolean unfollow(long userid, long appid, long updateDate){
+        boolean res = true;
+        try {
+            userAppFollowRepository.unfollow(userid, appid, false, updateDate);//应该是update
+        }catch(Exception e){
+            res = false;
+            log.error("unfollow failed, details:", e);
+        }
 
-        Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）
-        Pageable pageable = new PageRequest(curPage, 10, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
-        return userAppFollowRepository.findFollowedApps(pageable);
+        return res;
     }
 
-    public Page<AppDTO> findFollowedApps(int curPage, Sort.Direction direction, String sortProperty){
+    public Page<AppDTO> findFollowedApps(long userid, int curPage, Sort.Direction direction, String sortProperty){
+
+        Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）
+        Pageable pageable = new PageRequest(curPage, PAGESIZE, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
+        return userAppFollowRepository.findFollowedApps(userid, pageable);
+    }
+
+    public Page<AppDTO> findFollowedAppsByCT(long userid, long ctid, int curPage, Sort.Direction direction, String sortProperty){
 
         Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）
         Pageable pageable = new PageRequest(curPage, 10, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
-        return userAppFollowRepository.(pageable);
+        return userAppFollowRepository.findFollowedAppsByCT(userid, ctid, pageable);
     }
 
 

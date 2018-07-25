@@ -23,17 +23,20 @@ public class UserAppFollowDTO {
     @Id
     private long appid;//图标（路径）保留字段，现在用css样式控制，这个可以暂时废弃不用
 
-    private long ts;
+    private boolean follow;//true:followed, false:unfollowed
+
+    private long updateDate;//记录更新时间
 
 
     public UserAppFollowDTO(){
 
     }
 
-    public UserAppFollowDTO(Long userid, Long appid, long ts){
+    public UserAppFollowDTO(long userid, long appid, boolean follow, long updateDate){
         this.userid = userid;
         this.appid = appid;
-        this.ts = ts;
+        this.follow = follow;
+        this.updateDate = updateDate;
     }
 
     //todo: userid + appid 构成这个数据表的主键（不需要再冗余设计一个单独属于这个表的主键，看看这样是否可以实现）

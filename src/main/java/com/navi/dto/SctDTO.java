@@ -20,9 +20,9 @@ public class SctDTO {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
-    private Long id;
+    private long id;
 
-    private Long ctId;//外键 （todo:springData这里怎么注解外键）
+    private long ctId;//外键 （todo:springData这里怎么注解外键）
 
     private String name;//名称
     private String icon;//图标（路径）

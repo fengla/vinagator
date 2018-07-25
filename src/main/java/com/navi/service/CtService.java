@@ -12,6 +12,8 @@ import java.util.List;
 
 public class CtService {
 
+    private final int CT_SIZE_PAGE = 8;//这个8既是weixinapp每页展示的ct个数，也是后端系统每页展示的ct个数
+
     @Autowired
     private CtRepository ctRepository;
 
@@ -28,9 +30,8 @@ public class CtService {
     }
 
     public Page<CtDTO> findCts(int curPage, Sort.Direction direction, String sortProperty){
-
         Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）
-        Pageable pageable = new PageRequest(curPage, 20, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
+        Pageable pageable = new PageRequest(curPage, CT_SIZE_PAGE, sort);//当前设计只展现前20个最新的app，当然这里也可以继续增加"上拉下拉的方法"
         return ctRepository.findByUpdateDateNotNull(pageable);
     }
 }

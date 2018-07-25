@@ -87,7 +87,7 @@
                                     </thead>
 
                                     <tbody>
-                                    <c:forEach items="${appDTOList}" var="app">
+                                    <c:forEach items="${resp.content}" var="app">
                                         <tr>
                                             <%--这里填写的属性名字就是服务端定义的属性名--%>
                                             <%--这里第一栏把app的图标也展示出来吧,设置好样式不要太大了--%>
@@ -166,7 +166,7 @@
 
 
                                 <div class="pull-right">
-                                    第 ${pageModel.curPage} 页／共 ${pageModel.totalPage} 页
+                                    第 ${resp.number+1} 页／共 ${resp.totalPages} 页
                                 </div>
 
                             </div>
@@ -201,36 +201,33 @@
 
 
     <script>
-        <%--function jump(page){--%>
-            <%--alert();--%>
-            <%--$.get(${pageContext.request.contextPath}, {'curPage': page});--%>
-        <%--}--%>
+        // 注意区分逻辑页码与展示页码，展示页码从1开始，逻辑页码从0开始索引
         pageDiv = "<div class=\"text-center\">\n" +
             "                                    <div class=\"btn-group\">\n" +
             "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=0\">第一页</a>";
 
-        if(${pageModel.curPage} > 1){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">上一页</a>";
+        if(${resp.number} > 0){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number-1}\">上一页</a>";
         }
-        if(${pageModel.curPage} > 2){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-2}\">${pageModel.curPage-2}</a>\n" +
-                "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">${pageModel.curPage-1}</a>";
-        }else if(${pageModel.curPage} > 1){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">${pageModel.curPage-1}</a>";
-        }
-
-        pageDiv += "<a class=\"btn btn-white active\" href=\"/editApp?curPage=${pageModel.curPage}\">${pageModel.curPage}</a>";
-
-        if(${pageModel.curPage} < ${pageModel.totalPage-1}){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">${pageModel.curPage+1}</a>\n" +
-                "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+2}\">${pageModel.curPage+2}</a>";
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">下一页</a>";
-        }else if(${pageModel.curPage} < ${pageModel.totalPage}){//当前页是倒数第二页
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">${pageModel.curPage+1}</a>";
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">下一页</a>";
+        if(${resp.number} > 1){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number-2}\">${resp.number-1}</a>\n" +
+                "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number-1}\">${resp.number}</a>";
+        }else if(${resp.number} > 0){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number-1}\">${resp.number}</a>";
         }
 
-        pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.totalPage}\">最后一页</a>";
+        pageDiv += "<a class=\"btn btn-white active\" href=\"/editApp?curPage=${resp.number}\">${resp.number+1}</a>";
+
+        if(${resp.number+1} < ${resp.totalPages-1}){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number+1}\">${resp.number+2}</a>\n" +
+                "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number+2}\">${resp.number+3}</a>";
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number+1}\">下一页</a>";
+        }else if(${resp.number+1} < ${resp.totalPages}){//当前页是倒数第二页
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number+1}\">${resp.number+2}</a>";
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.number+1}\">下一页</a>";
+        }
+
+        pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${resp.totalPages-1}\">最后一页</a>";
 
         document.getElementById("pageDiv").innerHTML = pageDiv;
     </script>

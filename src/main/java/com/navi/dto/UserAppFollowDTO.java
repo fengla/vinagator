@@ -19,9 +19,9 @@ public class UserAppFollowDTO {
 //    @GeneratedValue(strategy= GenerationType.AUTO) //todo:分别理解几种生成机制
 //    private Long id;
     @Id
-    private Long userid;//名称 todo:这里如果是long会有问题吗？毕竟DTO中定义的是Long
+    private long userid;//名称 todo:这里如果是long会有问题吗？毕竟DTO中定义的是Long
     @Id
-    private Long appid;//图标（路径）保留字段，现在用css样式控制，这个可以暂时废弃不用
+    private long appid;//图标（路径）保留字段，现在用css样式控制，这个可以暂时废弃不用
 
     private long ts;
 

@@ -88,7 +88,7 @@
                                     </thead>
 
                                     <tbody>
-                                    <c:forEach items="${ctDTOList}" var="ct">
+                                    <c:forEach items="${resp.content}" var="ct">
                                         <tr>
                                             <%--这里填写的属性名字就是服务端定义的属性名--%>
                                             <td>
@@ -116,7 +116,7 @@
                                                 <%--根据app情况设置这个按钮，如果是已经审核通过,点击设置为不通过，如果不通过则点击变为通过。。。这个需求怎么做？--%>
                                                 <%--删除后还是需要返回当前页面，所以需要带上curPage参数;但是对于令挖几个只是需要ajax请求的并不涉及到页面跳转，因此则不需要带上这个当前页面的参数--%>
 
-                                                <a href="/updateCt?id=${ct.id}&&curPage=${pageModel.curPage}" type="button" class="btn btn-warning btn-sm disabled">更新</a>
+                                                <a href="/updateCt?id=${ct.id}&&curPage=${resp.number}" type="button" class="btn btn-warning btn-sm disabled">更新</a>
                                                 <%--先不开放删除功能，将这个按键设置为不可点击--%>
                                                 <a type="button" class="btn btn-danger btn-sm" onclick="deleteCt(${ct.id})">删除</a>
 
@@ -128,15 +128,16 @@
 
                                 </table>
 
-                                <%--<div class="text-center">--%>
-                                    <%--<div class="btn-group" id="pageDiv">--%>
+                                <%--这是用来展示上一页，下一页的，不是冗余代码，不要删除了--%>
+                                <div class="text-center">
+                                    <div class="btn-group" id="pageDiv">
 
-                                    <%--</div>--%>
-                                <%--</div>--%>
+                                    </div>
+                                </div>
 
 
                                 <div class="pull-right">
-                                    第 ${pageModel.curPage} 页／共 ${pageModel.totalPage} 页
+                                    第 ${resp.number+1} 页／共 ${resp.totalPages} 页
                                 </div>
 
                             </div>
@@ -171,36 +172,33 @@
 
 
     <script>
-        <%--function jump(page){--%>
-            <%--alert();--%>
-            <%--$.get(${pageContext.request.contextPath}, {'curPage': page});--%>
-        <%--}--%>
+        // 注意区分逻辑页码与展示页码，展示页码从1开始，逻辑页码从0开始索引
         pageDiv = "<div class=\"text-center\">\n" +
             "                                    <div class=\"btn-group\">\n" +
-            "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=0\">第一页</a>";
+            "                                        <a class=\"btn btn-white\" href=\"/editCt?curPage=0\">第一页</a>";
 
-        if(${pageModel.curPage} > 1){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">上一页</a>";
+        if(${resp.number} > 0){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number-1}\">上一页</a>";
         }
-        if(${pageModel.curPage} > 2){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-2}\">${pageModel.curPage-2}</a>\n" +
-                "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">${pageModel.curPage-1}</a>";
-        }else if(${pageModel.curPage} > 1){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage-1}\">${pageModel.curPage-1}</a>";
-        }
-
-        pageDiv += "<a class=\"btn btn-white active\" href=\"/editApp?curPage=${pageModel.curPage}\">${pageModel.curPage}</a>";
-
-        if(${pageModel.curPage} < ${pageModel.totalPage-1}){
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">${pageModel.curPage+1}</a>\n" +
-                "                                        <a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+2}\">${pageModel.curPage+2}</a>";
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">下一页</a>";
-        }else if(${pageModel.curPage} < ${pageModel.totalPage}){//当前页是倒数第二页
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">${pageModel.curPage+1}</a>";
-            pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.curPage+1}\">下一页</a>";
+        if(${resp.number} > 1){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number-2}\">${resp.number-1}</a>\n" +
+                "                                        <a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number-1}\">${resp.number}</a>";
+        }else if(${resp.number} > 0){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number-1}\">${resp.number}</a>";
         }
 
-        pageDiv += "<a class=\"btn btn-white\" href=\"/editApp?curPage=${pageModel.totalPage}\">最后一页</a>";
+        pageDiv += "<a class=\"btn btn-white active\" href=\"/editCt?curPage=${resp.number}\">${resp.number+1}</a>";
+
+        if(${resp.number+1} < ${resp.totalPages-1}){
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number+1}\">${resp.number+2}</a>\n" +
+                "                                        <a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number+2}\">${resp.number+3}</a>";
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number+1}\">下一页</a>";
+        }else if(${resp.number+1} < ${resp.totalPages}){//当前页是倒数第二页
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number+1}\">${resp.number+2}</a>";
+            pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.number+1}\">下一页</a>";
+        }
+
+        pageDiv += "<a class=\"btn btn-white\" href=\"/editCt?curPage=${resp.totalPages-1}\">最后一页</a>";
 
         document.getElementById("pageDiv").innerHTML = pageDiv;
     </script>

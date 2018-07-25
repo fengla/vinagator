@@ -1,6 +1,9 @@
 package com.navi.repository;
 
+import com.navi.dto.AppDTO;
 import com.navi.dto.UserAppFollowDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
 //attention:这里是interface而不是class
@@ -9,6 +12,10 @@ import org.springframework.data.repository.CrudRepository;
 public interface UserAppFollowRepository extends CrudRepository<UserAppFollowDTO, Long>{
     //todo；常规的方法（如findBy..save等。。。）这里都不需要声明？直接在service层调用就可以了？？
 
-    //关于这种方法自动生成机制还是不明白？
-    //分别针对增删改查学习这种机制。。。
+    //这个表本身不存储分类信息，所以需要进行join查询。。。join appDTO这个表
+    //所以这里需要自己来定义sql语句
+    public Page<AppDTO> findByUseridAndCt(long userid, long ct, Pageable pageable);
+
+    //这个表自身只是存储了userid-appid的映射关系。。但是这里需要查询appDTO,所以这里还是需要自己来写join sql语句
+    public Page<AppDTO> findFollowedApps(long userid, long ct, Pageable pageable);
 }

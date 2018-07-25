@@ -230,24 +230,15 @@ public class AdminController {
         String sortProperty = "updateDate";
         Sort.Direction direction = Sort.Direction.DESC;
         Page<AppDTO> appDTOPage = appService.findApps(curPage, direction, sortProperty);//查询所有文章，指定页的文章（所有文章按照插入顺序的倒序来排列）
-        List<AppDTO> appDTOList = appDTOPage.getContent();
-        //log.warn("finad all, docs:" + appDTOList);
-
-        PageModel pageModel = new PageModel();
-        //todo: importasnt !!!!!!!!!!!!!!!!! 前端展示的页码也不对，都出现了0页了。。。这样会有大问题的
-        pageModel.setTotalPage(appDTOPage.getTotalPages()-1);//todo:因为2处定义的页面起始索引不一样。。。这里可以统一一下。。。不然下面的共几页展示的也不对。
-        //todo: importasnt !!!!!!!!!!!!!!!!!
-        pageModel.setCurPage(curPage);
-        //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
 
         List<CtDTO> cts = ctService.findAll();
 
         //设置ctName
-        for(AppDTO appDTO : appDTOList){
+        for(AppDTO appDTO : appDTOPage.getContent()){
             if(appDTO.getCt() != 0){
                 for(CtDTO ctDTO : cts){
                     if(ctDTO.getId() == appDTO.getCt()){//todo: ctid与appDTO中的ct属性不一样啊，一个是long 一个是int，这个需要统一一下
-                        appDTO.setCtName(ctDTO.getName());
+                        appDTO.setCtName(ctDTO.getName());//todo: 这个在前端有什么作用？是不是可以优化？
                         break;
                     }
                 }
@@ -256,8 +247,7 @@ public class AdminController {
             }
         }
 
-        model.addAttribute("pageModel", pageModel);
-        model.addAttribute("appDTOList", appDTOList);
+        model.addAttribute("resp", appDTOPage);
         model.addAttribute("cts", cts);
         return "AppEdit";
     }
@@ -338,20 +328,8 @@ public class AdminController {
         String sortProperty = "updateDate";
         Sort.Direction direction = Sort.Direction.DESC;
         Page<BannerDTO> bannerDTOPage = bannerService.findBanners(curPage, direction, sortProperty);//查询所有文章，指定页的文章（所有文章按照插入顺序的倒序来排列）
-        List<BannerDTO> bannerDTOList = bannerDTOPage.getContent();
-        //log.warn("finad all, docs:" + appDTOList);
 
-        PageModel pageModel = new PageModel();
-        //todo: importasnt !!!!!!!!!!!!!!!!! 前端展示的页码也不对，都出现了0页了。。。这样会有大问题的
-        pageModel.setTotalPage(bannerDTOPage.getTotalPages()-1);//todo:因为2处定义的页面起始索引不一样。。。这里可以统一一下。。。不然下面的共几页展示的也不对。
-        //todo: importasnt !!!!!!!!!!!!!!!!!
-        pageModel.setCurPage(curPage);
-        //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
-
-
-
-        model.addAttribute("pageModel", pageModel);
-        model.addAttribute("bannerDTOList", bannerDTOList);
+        model.addAttribute("resp", bannerDTOPage);
 
         return "BannerEdit";
     }
@@ -393,24 +371,9 @@ public class AdminController {
         String sortProperty = "updateDate";
         Sort.Direction direction = Sort.Direction.DESC;
         Page<CtDTO> ctDTOPage = ctService.findCts(curPage, direction, sortProperty);//查询所有文章，指定页的文章（所有文章按照插入顺序的倒序来排列）
-        List<CtDTO> ctDTOList = ctDTOPage.getContent();
 
 
-        //debug
-        log.warn("finad all, cts:" + ctDTOList);
-
-
-        PageModel pageModel = new PageModel();
-        //todo: importasnt !!!!!!!!!!!!!!!!! 前端展示的页码也不对，都出现了0页了。。。这样会有大问题的
-        pageModel.setTotalPage(ctDTOPage.getTotalPages()-1);//todo:因为2处定义的页面起始索引不一样。。。这里可以统一一下。。。不然下面的共几页展示的也不对。
-        //todo: importasnt !!!!!!!!!!!!!!!!!
-        pageModel.setCurPage(curPage);
-        //todo: 其实不用封装PageModel...直接用appDTOPage应该就可以了
-
-
-
-        model.addAttribute("pageModel", pageModel);
-        model.addAttribute("ctDTOList", ctDTOList);
+        model.addAttribute("resp", ctDTOPage);
 
         return "CtEdit";
     }

@@ -41,7 +41,7 @@
                                         <%--<img src="img/logo.jpeg" class="img-circle" style="width:48px;height:48px" alt="profile">--%>
                                         <!-- todo: 把字体调大一点 -->
                                          <strong>分享新的小程序 </strong><br>
-                                         <small style="color:white">tips: 可以发送链接到电脑，电脑端填写更方便呢</small>
+                                         <small style="color:white">tips: 可以发送链接到电脑，电脑端填写更方便呢---【这个页面保留给开发者上传自己的app】</small>
 
                                     </div>
 

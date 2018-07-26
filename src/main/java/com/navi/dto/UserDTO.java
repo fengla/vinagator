@@ -27,6 +27,9 @@ public class UserDTO {
 
     private long createDate;//用户首次使用本小程序的时间(时间戳s)
 
+    private long lastActive;//最近活跃
+    private String token;//todo: 最近登录被赋予的token...结合缓存机制进行用户权限验证
+
     //todo: 其他从微信端获取的数据这里再进行定义
 
 

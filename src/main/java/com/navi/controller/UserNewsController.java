@@ -21,12 +21,12 @@ public class UserNewsController {
     private UserNewsService userNewsService;
 
     @GetMapping("/followNews")
-    public Object followNews(Long userid, Long newsid, int follow){
+    public Object followNews(Long userid, Long newsid){
 
-        log.warn(String.format("follow news, userid:%f, newsid:%f", userid, newsid));
+        log.warn(String.format("followNews, userid:%f, newsid:%f", userid, newsid));
 
         long ts = System.currentTimeMillis()/1000;
-        UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, follow, ts);
+        UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, 1, ts);
         UserNewsFollowDTO userNewsFollowDTOSaved = userNewsService.follow(userNewsFollowDTO);
         //这里不要直接返回DTO对象，而是应该返回成功或者失败的信息；毕竟需要用户知道他已经点赞过了还是这一次成功点赞了。
         //return success or failed(why?悬浮模态框提示：你已经点过赞了哟！)
@@ -37,7 +37,22 @@ public class UserNewsController {
     //如果一个用户可以多次点击。。那么一个用户可以无限创建数据库连接，就可以打挂掉我的服务。。
     //todo: important 那么涉及到整个系统的问题也来了：如何限制统一用户的过于频繁的请求？
 
+    @GetMapping("/unFollowNews")
+    public Object unFollowNews(Long userid, Long newsid){
 
+        log.warn(String.format("unFllowNews, userid:%f, newsid:%f", userid, newsid));
+
+        long ts = System.currentTimeMillis()/1000;
+        UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, -1, ts);
+        UserNewsFollowDTO userNewsFollowDTOSaved = userNewsService.unFollow(userNewsFollowDTO);
+        //这里不要直接返回DTO对象，而是应该返回成功或者失败的信息；毕竟需要用户知道他已经点赞过了还是这一次成功点赞了。
+        //return success or failed(why?悬浮模态框提示：你已经点过赞了哟！)
+
+        return userNewsFollowDTOSaved;
+    }
+
+
+    //todo:评论应该还挺复杂的，暂且先把评论功能在前端隐藏掉，后续开发完成后再放出来
     //小程序前端如何发起post请求？
     //前端判断新评论是回复评论的还是回复新闻本身的，然后针对的传id回来后端
     //todo: 第一版本只做对新闻的评论，不做对评论的评论吧

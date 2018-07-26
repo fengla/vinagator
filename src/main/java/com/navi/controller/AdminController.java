@@ -223,6 +223,17 @@ public class AdminController {
         return "AppCrawler";
     }//这里进入填写地址页面，然后请求CrawlerController
 
+    @GetMapping("/uploadApp")
+    public String uploadApp(ModelMap modelMap){
+
+        List<CtDTO> cts = new ArrayList<>();
+        cts = ctService.findAll();
+
+        modelMap.addAttribute("cts", cts);
+
+        return "AppUpload";
+    }
+
 
     @GetMapping("/editApp")
     public String editApp(ModelMap model, int curPage){

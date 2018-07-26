@@ -9,11 +9,13 @@ import javax.persistence.*;
 @Data
 public class NewsDTO {
 
+
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
-    //todo: 测试就用docid作为newsid这个表的key,测试看看是否可行
     private String docid;//本地docid，当前也就是一点的docid, 后续可以再修改
+
+    //@GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
+
 
     private String content;
     private String img;

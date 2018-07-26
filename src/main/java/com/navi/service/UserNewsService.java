@@ -24,6 +24,13 @@ public class UserNewsService {
         return userNewsFollowDTOSaved;
     }
 
+    public UserNewsFollowDTO unFollow(UserNewsFollowDTO userNewsFollowDTO){
+
+        UserNewsFollowDTO userNewsFollowDTOSaved = userNewsFollowRepository.save(userNewsFollowDTO);
+
+        return userNewsFollowDTOSaved;
+    }
+
     public UserNewsCommentDTO addComment(UserNewsCommentDTO userNewsCommentDTO){
 
         UserNewsCommentDTO userNewsCommentDTOSaved = userNewsCommentRepository.save(userNewsCommentDTO);

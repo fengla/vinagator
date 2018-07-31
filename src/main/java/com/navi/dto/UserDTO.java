@@ -14,8 +14,9 @@ public class UserDTO {
     private Long userid;//用户在本系统中唯一的不可变的ID,
 
     //微信平台返回的数据
-    private String openid;
     private String session_key;
+
+    private String openid;
     private String unionid;
 
     //private String grants;//当前用户已获取到的微信平台的授权列表

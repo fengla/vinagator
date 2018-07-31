@@ -13,13 +13,13 @@ import java.io.Serializable;
 public class UserNewsFollowKey implements Serializable {
 
     private Long userid;
-    private Long newsid;
+    private String newsid;
 
     public UserNewsFollowKey(){
 
     }
 
-    public UserNewsFollowKey(Long userid, Long newsid){
+    public UserNewsFollowKey(Long userid, String newsid){
         this.userid = userid;
         this.newsid = newsid;
     }

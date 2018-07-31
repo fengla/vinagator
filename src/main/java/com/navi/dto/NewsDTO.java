@@ -28,4 +28,7 @@ public class NewsDTO {
 
     @Transient
     private boolean containsImg;
+
+    private int follows;//赞的人数
+    private int unfollows;//踩的人数
 }

@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
-public interface NewsRepository extends CrudRepository<NewsDTO, Long>{
+public interface NewsRepository extends CrudRepository<NewsDTO, String>{
 
 
     public NewsDTO save(NewsDTO newsDTO);//添加一级分类
@@ -18,7 +18,7 @@ public interface NewsRepository extends CrudRepository<NewsDTO, Long>{
 
 //    public List<NewsDTO> findAllByDateAfter(long date);//查询当前日期之后的所有活动
 
-    public NewsDTO findById(Long id);
+    public NewsDTO findByDocid(String docid);
 
     Page<NewsDTO> findByTsNotNull(Pageable pageable);
 }

@@ -17,9 +17,9 @@ import javax.persistence.IdClass;
 public class UserNewsFollowDTO {
 
     @Id
-    private Long userid;
+    private long userid;
     @Id
-    private Long newsid;
+    private String newsid;
 
     private int follow;//follow:0:default保留字段; 1:点赞; -1：点踩
 
@@ -30,7 +30,7 @@ public class UserNewsFollowDTO {
 
     }
 
-    public UserNewsFollowDTO(Long userid, Long newsid, int follow, long ts){
+    public UserNewsFollowDTO(Long userid, String newsid, int follow, long ts){
         this.userid = userid;
         this.newsid = newsid;
         this.follow = follow;

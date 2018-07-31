@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 用户与新闻之间的关系：评论，点赞等
  */
@@ -21,9 +24,9 @@ public class UserNewsController {
     private UserNewsService userNewsService;
 
     @GetMapping("/followNews")
-    public Object followNews(Long userid, Long newsid){
+    public Object followNews(Long userid, String newsid){
 
-        log.warn(String.format("followNews, userid:%f, newsid:%f", userid, newsid));
+        log.warn("followNews, userid:"+userid+" newsid:" + newsid);
 
         long ts = System.currentTimeMillis()/1000;
         UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, 1, ts);
@@ -38,9 +41,9 @@ public class UserNewsController {
     //todo: important 那么涉及到整个系统的问题也来了：如何限制统一用户的过于频繁的请求？
 
     @GetMapping("/unFollowNews")
-    public Object unFollowNews(Long userid, Long newsid){
+    public Object unFollowNews(Long userid, String newsid){
 
-        log.warn(String.format("unFllowNews, userid:%f, newsid:%f", userid, newsid));
+        log.warn("unFollowNews, userid:"+userid+" newsid:" + newsid);
 
         long ts = System.currentTimeMillis()/1000;
         UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, -1, ts);
@@ -51,6 +54,21 @@ public class UserNewsController {
         return userNewsFollowDTOSaved;
     }
 
+    @GetMapping("/getNewsFollows")
+    public Object getNewsFollows(String newsid){
+        //统计新闻的点赞点踩信息等
+        log.warn(String.format("countNews newsid:%s", newsid));
+
+        int countFollow = userNewsService.countNews(newsid, 1);//赞
+        int countUnFollow = userNewsService.countNews(newsid, -1);//赞
+        int countDefault = userNewsService.countNews(newsid, 0);//赞
+        Map<String,Integer> counter = new HashMap<>();
+        counter.put("赞", countFollow);
+        counter.put("踩", countUnFollow);
+        counter.put("默认", countDefault);
+
+        return counter;
+    }
 
     //todo:评论应该还挺复杂的，暂且先把评论功能在前端隐藏掉，后续开发完成后再放出来
     //小程序前端如何发起post请求？

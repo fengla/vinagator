@@ -51,6 +51,17 @@ public class NewsController {
         return newsList;
     }
 
+    @GetMapping("/getNewsDetail")
+    @ResponseBody
+    public Object getNewsDetail(String newsid){
+
+        log.warn(String.format("getNewsDetail, newsid:%s", newsid));
+
+        NewsDTO newsDTO = newsService.findById(newsid);
+
+        return newsDTO;
+    }
+
     @GetMapping("/getNewsByPage")
     @JsonFieldFilter(type = NewsDTO.class,exclude = "ts")//把gitPassword字段过滤掉
     public Object getNewsByPage(int curPage){

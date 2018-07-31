@@ -30,7 +30,7 @@ public class NewsService {
         return newsRepository.findByTsNotNull(pageable);
     }
 
-    public NewsDTO findById(Long docId){
-        return newsRepository.findById(docId);
+    public NewsDTO findById(String docid){
+        return newsRepository.findByDocid(docid);
     }
 }

@@ -42,6 +42,13 @@ public class UserAppService {
         return res;
     }
 
+    public int countFollowedApps(long userid){
+
+        //只做count，不需要查询所有app数据（其实现在的Pagable查询的时候也会展示总共的记录数啊，所以这里其实没必要有这个方法的存在）
+
+        return 0;
+    }
+
     public Page<AppDTO> findFollowedApps(long userid, int curPage, Sort.Direction direction, String sortProperty){
 
         Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）

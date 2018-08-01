@@ -9,11 +9,20 @@ public class UserUtil {
     private static final int USERID_LENGTH = 8;//userid长度(userid仅仅由数字组成)
 
     @Autowired
-    private UserService userService;
+    private UserService userService;//这个可以用static吗？
 
     //生成userid
     public long genUserid(){
-        return Long.parseLong(RandomString.getNumString(USERID_LENGTH));
+        long res = 0l;
+
+        while(true){
+            res = Long.parseLong(RandomString.getNumString(USERID_LENGTH));
+            if(checkValid(res) == true){
+                break;
+            }
+        }
+
+        return res;
     }
 
     //判断该id在数据库中是否已存在

@@ -43,7 +43,7 @@ public class AppService {
     }
 
     //查询指定CT下的app信息
-    public Page<AppDTO> findAppsByCT(int ct, int curPage, Sort.Direction direction, String sortProperty){
+    public Page<AppDTO> findAppsByCT(long ct, int curPage, Sort.Direction direction, String sortProperty){
 
         Sort sort = new Sort(direction, sortProperty);//AppDTO类中的属性名，而不是数据库中的名字（数据库中是：update_date）
         Pageable pageable = new PageRequest(curPage, 10, sort);//每刷更新10个app的信息，后期这个可以放在配置文件中

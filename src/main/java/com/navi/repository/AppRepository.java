@@ -35,7 +35,7 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
     //todo：分页查询
     public Page<AppDTO> findByUpdateDateNotNull(Pageable pageable);//NotNull这么定义方法名正确吗？
 
-    public Page<AppDTO> findByCt(int ct, Pageable pageable);//todo: 这个能按照 ct 查询么？？？有待验证
+    public Page<AppDTO> findByCt(long ct, Pageable pageable);//todo: 这个能按照 ct 查询么？？？有待验证
 
     public Page<AppDTO> findAllByAppNameLike(String keyword, Pageable pageable);//todo: 这个能按照 ct 查询么？？？有待验证
 

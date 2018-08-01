@@ -123,7 +123,7 @@ public class AppController {
      */
     @GetMapping("/getAppsByCT")
     @ResponseBody
-    public Object getAppsByCT(int ct, int curPage){
+    public Object getAppsByCT(long ct, int curPage){
         //todo:
         log.warn("enter showAppsByCT, curPage:" + curPage + ", ct:" + ct);
 

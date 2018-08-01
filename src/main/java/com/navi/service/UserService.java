@@ -38,8 +38,18 @@ public class UserService {
         return userDTO;
     }
 
+    public UserDTO save(UserDTO user){//名为save,其实实际执行的是saveOrUpdate
+        UserDTO userDTO = userRepository.save(user);
+
+        return userDTO;
+    }
+
     public UserDTO findUserDTOByUserid(Long userid){
         return userRepository.findUserDTOByUserid(userid);
+    }
+
+    public UserDTO findUserDTOByOpenid(String openid){
+        return userRepository.findUserDTOByOpenid(openid);
     }
 
 

@@ -124,6 +124,14 @@
     </dependency>
     <!--todo: http请求工具包，后面需要把这个替换掉-->
 
+    <!--做cache需求，引入的相关包-->
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>2.5.6</version>
+    </dependency>
+    <!--做cache需求，引入的相关包-->
+
   </dependencies>
   <!--<build>-->
     <!--<finalName>meetu</finalName>-->

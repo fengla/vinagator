@@ -8,8 +8,8 @@ import java.util.Map;
 public class OpenidUtilTest {
     public static void main(String args[]) throws Exception{
         Map<String, Object> params = new HashMap<>();
-        params.put("appid", "wx43b98c9cd512173a");
-        params.put("secret", "7b46f5dd3537c581ee563cbfcf99c08f");
+        params.put("appid", "");
+        params.put("secret", "");
         params.put("js_code", "033UTz1Q023gBa21d95Q0UcH1Q0UTz1j");
         params.put("grant_type", "authorization_code");
 

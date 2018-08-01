@@ -12,4 +12,6 @@ public interface UserRepository extends CrudRepository<UserDTO, Long>{
     public UserDTO findUserDTOByUserid(Long userid);
     //关于这种方法自动生成机制还是不明白？
     //分别针对增删改查学习这种机制。。。
+
+    public UserDTO findUserDTOByOpenid(String openid);
 }

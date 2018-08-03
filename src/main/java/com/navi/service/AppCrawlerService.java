@@ -39,6 +39,7 @@ public class AppCrawlerService {
     private PreviewService previewService;
 
     public AppDTO save(AppDTO appDTO){
+        //todo: save之前先查询一下，防止有重复的
         return appRepository.save(appDTO);
     }
 
@@ -57,6 +58,22 @@ public class AppCrawlerService {
         log.info("appJson:" + appJson);
 
         return appJson;
+    }
+
+    public JSONArray parseArrayFromResponse(String response){
+        String appRaw = "";
+        String regex = "xcxs:(.*)\\n";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(response);
+        while(m.find()){
+            appRaw = m.group(1);
+        }
+        log.info("appRaw:" + appRaw);
+        appRaw = appRaw.trim();
+
+        JSONArray jsonArray = JSON.parseArray(appRaw);
+
+        return jsonArray;
     }
 
     public AppDTO encapAppDTO(JSONObject appJson) throws Exception{

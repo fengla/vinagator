@@ -223,6 +223,11 @@ public class AdminController {
         return "AppCrawler";
     }//这里进入填写地址页面，然后请求CrawlerController
 
+    @GetMapping("/crawlAppList")
+    public String crawlAppList(ModelMap modelMap){
+        return "AppListCrawler";
+    }
+
     @GetMapping("/uploadApp")
     public String uploadApp(ModelMap modelMap){
 

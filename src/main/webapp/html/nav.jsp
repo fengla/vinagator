@@ -24,7 +24,8 @@
                 <a href="#"><i class="fa fa-cloud-upload"></i> <span class="nav-label">APP上传 </span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="/uploadApp" class="disabled">手动上传</a></li>
-                    <li><a href="/crawlApp">自动上传</a></li>
+                    <li><a href="/crawlApp">自动上传-单篇</a></li>
+                    <li><a href="/crawlAppList">自动上传-整页</a></li>
                 </ul>
             </li>
 

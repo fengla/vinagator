@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class TokenGenerator {
 
-    private static final int TOKEN_LEGTH = 25;
+    private static final int TOKEN_LEGTH = 17;
 
     public static LoadingCache<Long, String> tokenCache = Caffeine.newBuilder()
             .maximumSize(5000)

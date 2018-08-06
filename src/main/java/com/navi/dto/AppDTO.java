@@ -44,6 +44,9 @@ public class AppDTO {
     private String ctName;
 
     @Transient
+    private boolean isFollowed;//用于判断登录用户是否已关注这个app,true表示已关注
+
+    @Transient
     private List<String> previews;//预览图(这个不持久化，但是需要在前端展示)
     private String previewStr;//预览图（这个需要持久化，但是不在前端展示）
 

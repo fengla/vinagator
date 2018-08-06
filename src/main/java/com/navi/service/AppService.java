@@ -20,7 +20,17 @@ public class AppService {
     private AppRepository appRepository;
 
     public AppDTO save(AppDTO appDTO){
-        return appRepository.save(appDTO);
+        AppDTO appDTO_old = appRepository.findByAppName(appDTO.getAppName());
+        if(appDTO_old != null){
+            log.error("duplicate apps, we already hold this app in our database, details:"+ appDTO);
+            return null;
+        }else{
+            return appRepository.save(appDTO);
+        }
+    }
+
+    public void deleteByAppid(long appid){
+        appRepository.deleteByAppid(appid);
     }
 
     public List<AppDTO> findAll(){
@@ -82,7 +92,7 @@ public class AppService {
     }
 
 
-    public boolean updateCtByAppid(int ct, long appid){
+    public boolean updateCtByAppid(long ct, long appid){
         try {
             appRepository.updateCtByAppid(ct, appid);
         }catch(Exception e){

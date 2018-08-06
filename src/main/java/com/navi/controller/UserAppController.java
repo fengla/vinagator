@@ -23,6 +23,24 @@ public class UserAppController {
     @Autowired
     private UserAppService userAppService;
 
+
+    /**
+     * 查询指定用户关注过的所有app数量
+     */
+    @GetMapping("/findFollowedAppsCount")
+    @ResponseBody
+    public Object findFollowedAppsCount(long userid){
+
+        log.warn("enter findFollowedAppsCount, userid:" + userid);
+
+        int count = userAppService.findFollowedAppsCount(userid);
+
+        log.warn("findFollowedAppsCount:" + count);
+
+        return count;
+    }
+
+
     /**
      * 查询指定用户关注过的所有app
      */

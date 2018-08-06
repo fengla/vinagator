@@ -105,7 +105,7 @@ public class AdminController {
                            @RequestParam("preview3") MultipartFile preview3,
                            @RequestParam("preview4") MultipartFile preview4,
                            ModelMap model, String name,
-                          String details, int ct, int sct){//todo：这个modelMap需要吗？（猜想：因为前台展示的数据是存在modelMap中的，所以应该还是必须的。。。）
+                          String details, long ct, int sct){//todo：这个modelMap需要吗？（猜想：因为前台展示的数据是存在modelMap中的，所以应该还是必须的。。。）
 
         AppDTO appDTO;
         try {
@@ -270,9 +270,9 @@ public class AdminController {
 
     @ResponseBody
     @GetMapping("/listScts")
-    public Object listScts(String ctid){//这里拿到的都是ct的id；并不是中文名
+    public Object listScts(long ct){//这里拿到的都是ct的id；并不是中文名
 
-        log.warn("ctid:" + ctid);
+        log.warn("ct:" + ct);
 
         Map<Long, String> scts = new HashMap<>();
 
@@ -303,7 +303,7 @@ public class AdminController {
 
     @GetMapping("/updateCt")
     @ResponseBody
-    public Object updateCt(String appid, int ct){
+    public Object updateCt(String appid, long ct){
         //todo:对于没有设置的前端拿到的默认值到底是null还是0呢？？？？？因为是int，所以应该是0的吧，应该是不存在null值的
         log.info("updateCt, appid:" + appid + ", ct:" + ct);//这里是新的分类
         //更新字段appDTO
@@ -314,14 +314,41 @@ public class AdminController {
 
     @GetMapping("/deleteApp")
     @ResponseBody
-    public Object deleteApp(String appid){
+    public Object deleteApp(long appid){
+
+        boolean res = true;
 
         log.info("deleteApp, appid:" + appid);
-        //更新字段appDTO
 
-        //删除的时候不仅仅需要删除appDTO表中的数据，还要把这个app关联的其他表中的数据都删除掉
+        try{
+            AppDTO appDTO = appService.findById(appid);
 
-        return "暂未上线";
+            String rootPath = context.getRealPath("");
+            log.info("delete action, rootPath:" + rootPath);
+            //icon
+            FileUtil.deleteFile(rootPath + appDTO.getIcon());
+
+            //qrcode
+            FileUtil.deleteFile(rootPath + appDTO.getQrCode());
+
+            //preview
+            JsonSerializer jsonFilter = new JsonSerializer();
+            List<String> previews = jsonFilter.mapper.readValue(appDTO.getPreviewStr(), List.class);
+            for(String preview : previews){
+                FileUtil.deleteFile(rootPath + preview);
+            }
+
+            //appDTO - 最后做这个删除
+            appService.deleteByAppid(appid);
+
+        }catch(Exception e){
+            res = false;
+        }
+
+        //java如何限定几个操作的原子性？如果有一个失败了，需要其他也都进行回滚。。。这个怎么处理？
+        //任何一步出现异常都应该返回删除失败
+
+        return res;
     }
 
     //这个需要跳转到编辑app数据的页面中。。。

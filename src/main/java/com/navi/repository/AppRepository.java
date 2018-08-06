@@ -14,6 +14,7 @@ import java.util.List;
 
 public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> {
 
+    public void deleteByAppid(long appid);
 
     public AppDTO save(AppDTO appDTO);//添加app
 
@@ -28,7 +29,7 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
     //public List<AppDTO> findAllByDateAfter(String date);//查询当前日期之后的所有活动
 
     public AppDTO findByAppid(Long appId);//todo: 如果这是不是写的对应的数据库中列的名字这样还能识别出怎么查询吗？测试一下这个方法的使用？看看能否正常识别到？
-
+    public AppDTO findByAppName(String appName);
     public AppDTO findByIcon(String icon);
     public AppDTO findByQrCode(String qrcode);
 
@@ -51,6 +52,6 @@ public interface AppRepository extends PagingAndSortingRepository<AppDTO, Long> 
 
     @Modifying
     @Query("update AppDTO appDTO set appDTO.ct =:ct where appDTO.appid =:appid")
-    public void updateCtByAppid(@Param("ct") int ct, @Param("appid") long appid);
+    public void updateCtByAppid(@Param("ct") long ct, @Param("appid") long appid);
 
 }

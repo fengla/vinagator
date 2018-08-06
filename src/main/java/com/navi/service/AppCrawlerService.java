@@ -39,8 +39,13 @@ public class AppCrawlerService {
     private PreviewService previewService;
 
     public AppDTO save(AppDTO appDTO){
-        //todo: save之前先查询一下，防止有重复的
-        return appRepository.save(appDTO);
+        AppDTO appDTO_old = appRepository.findByAppName(appDTO.getAppName());
+        if(appDTO_old != null){
+            log.error("duplicate apps, we already hold this app in our database, details:"+ appDTO);
+            return null;
+        }else{
+            return appRepository.save(appDTO);
+        }
     }
 
     public JSONObject parseFromResponse(String response){

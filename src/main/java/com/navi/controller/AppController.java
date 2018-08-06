@@ -24,13 +24,16 @@ public class AppController {
     @Autowired
     private AppService appService;
 
+    @Autowired
+    private UserAppService userAppService;
+
 
     /**
      * 查询app详细信息
      */
     @GetMapping("/appDetail")
     @JsonFieldFilter(type = AppDTO.class,exclude = "previewStr")//把gitPassword字段过滤掉
-    public Object showAppDetail(Long appId){
+    public Object showAppDetail(Long appId, long userid){
 
         //debug
         log.warn("enter get appDetail by appId controller, appId:" + appId);
@@ -48,6 +51,15 @@ public class AppController {
                 ioe.printStackTrace();
             }
         }
+
+        //【important】将来web端的未登录用户kennel也会调用这个接口，对于未登录用户也应该是能够进行查询的，所以这里的userid不应该是这个controller方法必须的参数
+        if(userid!=0){
+            boolean isFollowed = userAppService.checkFollowed(userid, appId);
+            appDTO.setFollowed(isFollowed);
+
+        }
+
+
 
         log.warn("select appDTO by appid, details:" + appDTO);
 

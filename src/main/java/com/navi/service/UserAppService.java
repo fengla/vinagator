@@ -42,11 +42,27 @@ public class UserAppService {
         return res;
     }
 
+    public boolean checkFollowed(long userid, long appid){
+        boolean isFollowed = true;
+
+        UserAppFollowDTO userAppFollowDTOSaved = userAppFollowRepository.findByUseridAndAppid(userid, appid);
+        if(userAppFollowDTOSaved==null || !userAppFollowDTOSaved.isFollow()){
+            isFollowed = false;
+        }
+
+        return isFollowed;
+    }
+
     public int countFollowedApps(long userid){
 
         //只做count，不需要查询所有app数据（其实现在的Pagable查询的时候也会展示总共的记录数啊，所以这里其实没必要有这个方法的存在）
 
         return 0;
+    }
+
+    public int findFollowedAppsCount(long userid){
+
+        return userAppFollowRepository.countAllByUserid(userid);
     }
 
     public Page<AppDTO> findFollowedApps(long userid, int curPage, Sort.Direction direction, String sortProperty){

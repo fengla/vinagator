@@ -14,6 +14,10 @@ import org.springframework.data.repository.query.Param;
 //不同数据库extend的是不一样的，这里写的是mysql的，对于mongo的应该extends MongoRepository
 public interface UserAppFollowRepository extends CrudRepository<UserAppFollowDTO, Long>{
 
+    public UserAppFollowDTO findByUseridAndAppid(long userid, long appid);
+
+    public int countAllByUserid(long userid);
+
     @Query("select a from AppDTO a where a.appid in (select ua.appid from UserAppFollowDTO ua where ua.userid =:userid)")
     public Page<AppDTO> findFollowedApps(@Param("userid") long userid, Pageable pageable);
 

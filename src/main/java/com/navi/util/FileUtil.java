@@ -127,7 +127,7 @@ public class FileUtil {
 
     public static void main(String[] args) {
         //删除单个文件
-        String filePath = "/Users/admin/0724/test.jpeg";
+        String filePath = "/Users/admin/0724/test2.png";
         FileUtil.deleteFile(filePath);
         System.out.println("finished !");
     }

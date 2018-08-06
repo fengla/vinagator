@@ -205,5 +205,21 @@ public class UserController {
         return null;
     }
 
+    /**
+     * 用户反馈
+     * @param userid
+     * @param content
+     * @return
+     */
+    @PostMapping("/feedback")
+    public Object feedback(@RequestParam("userid")Long userid, @RequestParam("content")String content){
+
+        log.info("enter feedback, userid:" + userid);
+
+
+
+        return "success";
+    }
+
 
 }

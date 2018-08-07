@@ -25,8 +25,8 @@ public class FeedbackService {
         return feedbackRepository.findAll(pageable);
     }
 
-    public FeedbackDTO findById(Long ctId){
-        return feedbackRepository.findById(ctId);
+    public FeedbackDTO findById(Long fbid){
+        return feedbackRepository.findById(fbid);
     }
 
     public Page<FeedbackDTO> findByUserid(Long userid, int curPage, Sort.Direction direction, String sortProperty){

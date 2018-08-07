@@ -28,9 +28,11 @@ public class FeedbackDTO {
 
     public FeedbackDTO(){}
 
-    public FeedbackDTO(Long id, String content){
+    public FeedbackDTO(long id, long userid, String content){
         this.id = id;
+        this.userid = userid;
         this.content = content;
+        this.updateDate = System.currentTimeMillis()/1000;
     }
 
 }

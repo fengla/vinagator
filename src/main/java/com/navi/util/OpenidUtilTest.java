@@ -1,6 +1,5 @@
 package com.navi.util;
 
-import com.yidian.push.lib.core.util.HttpConnectionUtils;
 
 import java.util.HashMap;
 import java.util.Map;

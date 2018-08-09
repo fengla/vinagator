@@ -9,6 +9,7 @@ import com.navi.repository.UserNewsCommentRepository;
 import com.navi.repository.UserNewsFollowRepository;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 @Log4j
 public class UserNewsService {
@@ -94,6 +95,10 @@ public class UserNewsService {
         UserNewsCommentDTO userNewsCommentDTOSaved = userNewsCommentRepository.save(userNewsCommentDTO);
 
         return userNewsCommentDTOSaved;
+    }
+
+    public List<UserNewsFollowDTO> findByUseridAndNewsid(long userid, List<String> newsids){
+        return userNewsFollowRepository.findByUseridAndNewsidIn(userid, newsids);
     }
 
 

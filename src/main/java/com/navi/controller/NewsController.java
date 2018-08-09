@@ -1,6 +1,7 @@
 package com.navi.controller;
 
 import com.navi.dto.NewsDTO;
+import com.navi.dto.UserNewsFollowDTO;
 import com.navi.service.NewsService;
 import com.navi.service.UserNewsService;
 import com.navi.util.JsonFieldFilter;
@@ -64,8 +65,8 @@ public class NewsController {
 
     @GetMapping("/getNewsByPage")
     @JsonFieldFilter(type = NewsDTO.class,exclude = "ts")//把gitPassword字段过滤掉
-    public Object getNewsByPage(int curPage){
-        //todo:
+    public Object getNewsByPage(int curPage, long userid){
+
         log.warn("enter showAppsByCT, curPage:" + curPage);
 
         Page<NewsDTO> news = null;
@@ -76,8 +77,9 @@ public class NewsController {
         String sortProperty = "ts";
         Sort.Direction direction = Sort.Direction.DESC;//降序
         news = newsService.findNews(curPage, direction, sortProperty);
-
-        for(NewsDTO cur : news){//todo: news是个Page类型的，可以这样进行遍历吗？
+        List<String> newsids = new ArrayList<>();
+        for(NewsDTO cur : news){//经验证，Page类型也可以这样进行遍历
+            newsids.add(cur.getDocid());
             if(cur.getImg()!=null && !"".equals(cur.getImg()) && !"null".equals(cur.getImg())){
                 cur.setContainsImg(true);
             }//todo:不需要else? 因为boolean默认的值就是false?
@@ -85,7 +87,27 @@ public class NewsController {
             //再设置当前用户是不是已经点赞／踩了这个news，对于已经操作过的设置follow,unfollow字段为true
         }
 
+        //jpa mysql批量查询
+        List<UserNewsFollowDTO> userNewsFollowDTOS = userNewsService.findByUseridAndNewsid(userid, newsids);
+        System.out.println("[debug-follows-relations]:" + userNewsFollowDTOS);
+
+        //设置关注与否的boolean值
+        for(NewsDTO cur : news){
+            for(UserNewsFollowDTO userNewsFollowDTO : userNewsFollowDTOS){
+                if(userNewsFollowDTO.getNewsid().equals(cur.getDocid())){
+                    if(userNewsFollowDTO.getFollow()==1){//zan
+                        cur.setFollow(true);
+                    }else if(userNewsFollowDTO.getFollow()==-1){//cai
+                        cur.setUnfollow(true);
+                    }else{
+                        log.error("wrong follow relation, userid:" + userid + ", docid:" + cur.getDocid());
+                    }
+                }
+            }
+        }
+
         log.warn(news.toString());
+        //todo:【优化】这里其实就是2个表的join查询。。后期优化可以改成join查询，当前这么些相当于把业务压力从数据库转移到了server
 
         return news;
     }

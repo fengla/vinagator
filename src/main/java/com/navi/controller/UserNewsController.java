@@ -1,5 +1,6 @@
 package com.navi.controller;
 
+import com.navi.data.response.CommonResp;
 import com.navi.dto.UserNewsCommentDTO;
 import com.navi.dto.UserNewsFollowDTO;
 import com.navi.service.UserNewsService;
@@ -30,11 +31,11 @@ public class UserNewsController {
 
         long ts = System.currentTimeMillis()/1000;
         UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, 1, ts);
-        UserNewsFollowDTO userNewsFollowDTOSaved = userNewsService.follow(userNewsFollowDTO);
+        CommonResp commonResp = userNewsService.follow(userNewsFollowDTO);
         //这里不要直接返回DTO对象，而是应该返回成功或者失败的信息；毕竟需要用户知道他已经点赞过了还是这一次成功点赞了。
         //return success or failed(why?悬浮模态框提示：你已经点过赞了哟！)
 
-        return userNewsFollowDTOSaved;
+        return commonResp;
     }
     //todo: 一个用户是否可以多次点赞同一个文章，如何做到一个用户只能点击一次呢？实现查询展示到前台的时候就查询出该信息，然后设置前端样式？
     //如果一个用户可以多次点击。。那么一个用户可以无限创建数据库连接，就可以打挂掉我的服务。。
@@ -47,11 +48,11 @@ public class UserNewsController {
 
         long ts = System.currentTimeMillis()/1000;
         UserNewsFollowDTO userNewsFollowDTO = new UserNewsFollowDTO(userid, newsid, -1, ts);
-        UserNewsFollowDTO userNewsFollowDTOSaved = userNewsService.unFollow(userNewsFollowDTO);
+        CommonResp commonResp = userNewsService.unFollow(userNewsFollowDTO);
         //这里不要直接返回DTO对象，而是应该返回成功或者失败的信息；毕竟需要用户知道他已经点赞过了还是这一次成功点赞了。
         //return success or failed(why?悬浮模态框提示：你已经点过赞了哟！)
 
-        return userNewsFollowDTOSaved;
+        return commonResp;
     }
 
     @GetMapping("/getNewsFollows")

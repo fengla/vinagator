@@ -1,5 +1,6 @@
 package com.navi.service;
 
+import com.navi.data.response.CommonResp;
 import com.navi.dto.NewsDTO;
 import com.navi.dto.UserNewsCommentDTO;
 import com.navi.dto.UserNewsFollowDTO;
@@ -22,7 +23,17 @@ public class UserNewsService {
     private NewsRepository newsRepository;
 
 
-    public UserNewsFollowDTO follow(UserNewsFollowDTO userNewsFollowDTO){
+    public CommonResp follow(UserNewsFollowDTO userNewsFollowDTO){
+        CommonResp commonResp = new CommonResp();
+
+        //0.先查询之前有没有处理过
+        UserNewsFollowDTO userNewsFollowDTOOri = userNewsFollowRepository.findByUseridAndNewsid(userNewsFollowDTO.getUserid(), userNewsFollowDTO.getNewsid());
+        if(userNewsFollowDTOOri != null){
+            commonResp.setCode(1);//这些后面可以都设置成枚举，这样方便识别管理
+            commonResp.setDesc("您已经点过赞了哟！");
+            return commonResp;
+        }
+
         //1.编辑user-news表
         UserNewsFollowDTO userNewsFollowDTOSaved = userNewsFollowRepository.save(userNewsFollowDTO);
 
@@ -41,11 +52,22 @@ public class UserNewsService {
 
 
         //todo: 如何把1，2两个步骤封装成一个事务，换句话的意思是说需要保障他们的原子性
+        commonResp.setCode(0);
+        commonResp.setDesc("点赞成功啦～");
 
-        return userNewsFollowDTOSaved;
+        return commonResp;
     }
 
-    public UserNewsFollowDTO unFollow(UserNewsFollowDTO userNewsFollowDTO){
+    public CommonResp unFollow(UserNewsFollowDTO userNewsFollowDTO){
+        CommonResp commonResp = new CommonResp();
+
+        //0.先查询之前有没有处理过
+        UserNewsFollowDTO userNewsFollowDTOOri = userNewsFollowRepository.findByUseridAndNewsid(userNewsFollowDTO.getUserid(), userNewsFollowDTO.getNewsid());
+        if(userNewsFollowDTOOri != null){
+            commonResp.setCode(2);//这些后面可以都设置成枚举，这样方便识别管理
+            commonResp.setDesc("您已经点过踩了哟！");
+            return commonResp;
+        }
 
         UserNewsFollowDTO userNewsFollowDTOSaved = userNewsFollowRepository.save(userNewsFollowDTO);
 
@@ -54,7 +76,10 @@ public class UserNewsService {
         newsDTO.setUnfollows(countFollow);
         newsRepository.save(newsDTO);
 
-        return userNewsFollowDTOSaved;
+        commonResp.setCode(0);
+        commonResp.setDesc("点踩成功啦～");
+
+        return commonResp;
     }
 
     public int countNews(String newsid, int follow){

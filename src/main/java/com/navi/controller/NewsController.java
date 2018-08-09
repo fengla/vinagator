@@ -81,6 +81,8 @@ public class NewsController {
             if(cur.getImg()!=null && !"".equals(cur.getImg()) && !"null".equals(cur.getImg())){
                 cur.setContainsImg(true);
             }//todo:不需要else? 因为boolean默认的值就是false?
+
+            //再设置当前用户是不是已经点赞／踩了这个news，对于已经操作过的设置follow,unfollow字段为true
         }
 
         log.warn(news.toString());

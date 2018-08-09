@@ -11,4 +11,6 @@ public interface UserNewsFollowRepository extends CrudRepository<UserNewsFollowD
     //这里形参书写的顺序需要与方法名中使用的顺序一致
     //这里形参的名字无所谓（不要求与DTO中的一致）
     public int countAllByNewsidAndFollow(String newsid, int follow);
+
+    public UserNewsFollowDTO findByUseridAndNewsid(long userid, String newsid);
 }

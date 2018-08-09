@@ -31,4 +31,10 @@ public class NewsDTO {
 
     private int follows;//赞的人数
     private int unfollows;//踩的人数
+
+    //用于控制前端属性,不需要持久化到数据库
+    @Transient
+    private boolean follow;
+    @Transient
+    private boolean unfollow;
 }

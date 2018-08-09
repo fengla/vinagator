@@ -92,7 +92,7 @@
                                             <%--这里填写的属性名字就是服务端定义的属性名--%>
                                             <td>
                                                 <%--这里图片样式还需要修改 --%>
-                                                <img alt="image" class="" src="http://localhost:8080${banner.img}" style="width:200px;height:100px"/>
+                                                <img alt="image" class="" src="${pageContext.request.contextPath}${banner.img}" style="width:200px;height:100px"/>
                                                 <input type="file" name="iconFile" style="margin-top: 10px"/>
                                                 <%--todo: 图片下方放一个上传文件的,这样虽然展示出来了，但是怎么让这个上传图片的逻辑生效呢？--%>
                                             </td>
@@ -214,7 +214,7 @@
             // todo: 怎么带参数？这样子手动拼接data可以吗？
             var data = "appid="+appid+"&&valid="+valid
             $.ajax({
-                url: 'http://localhost:8080/auditApp' ,
+                url: '${pageContext.request.contextPath}/auditApp' ,
                 type: 'GET',
                 data: data,
                 async: false,
@@ -240,7 +240,7 @@
 
             var data = "appid=" + appid + "&&ct=" + tmpCt
             $.ajax({
-                url: 'http://localhost:8080/updateCt' ,
+                url: '${pageContext.request.contextPath}/updateCt' ,
                 type: 'GET',
                 data: data,
                 async: false,
@@ -266,7 +266,7 @@
         function deleteApp(appid) {
             var data = "appid=" + appid
             $.ajax({
-                url: 'http://localhost:8080/deleteApp' ,
+                url: '${pageContext.request.contextPath}/deleteApp' ,
                 type: 'GET',
                 data: data,
                 async: false,

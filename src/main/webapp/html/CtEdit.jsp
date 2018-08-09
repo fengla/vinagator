@@ -213,7 +213,7 @@
             // todo: 怎么带参数？这样子手动拼接data可以吗？
             var data = "appid="+appid+"&&valid="+valid
             $.ajax({
-                url: 'http://localhost:8080/auditApp' ,
+                url: '${pageContext.request.contextPath}/auditApp' ,
                 type: 'GET',
                 data: data,
                 async: false,
@@ -239,7 +239,7 @@
 
             var data = "appid=" + appid + "&&ct=" + tmpCt
             $.ajax({
-                url: 'http://localhost:8080/updateCt' ,
+                url: '${pageContext.request.contextPath}/updateCt' ,
                 type: 'GET',
                 data: data,
                 async: false,
@@ -265,7 +265,7 @@
         function deleteApp(appid) {
             var data = "appid=" + appid
             $.ajax({
-                url: 'http://localhost:8080/deleteApp' ,
+                url: '${pageContext.request.contextPath}/deleteApp' ,
                 type: 'GET',
                 data: data,
                 async: false,

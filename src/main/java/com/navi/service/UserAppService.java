@@ -17,7 +17,7 @@ import javax.transaction.Transactional;
 @Transactional
 public class UserAppService {
 
-    private final int PAGESIZE = 4;
+    private final int PAGESIZE = 10;
 
     @Autowired
     private UserAppFollowRepository userAppFollowRepository;

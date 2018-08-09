@@ -187,7 +187,7 @@ activityDetail_meetu.html
             alert("enter doLaunchActivity()")
             var formData = new FormData($( "#launchActivityForm" )[0]);
             $.ajax({
-                url: 'http://localhost:8080/doLaunchActivity' ,
+                url: '${pageContext.request.contextPath}/doLaunchActivity' ,
                 type: 'POST',
                 data: formData,
                 async: false,
